@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <style>
+      .edge-line { stroke: #f0f0f0; stroke-width: 1.5; fill: none; }
+    </style>
+  </defs>
+  <rect width="200" height="200" fill="#0a0a0a"/>
+  <!-- Geometric 3D cube/crystal shape -->
+  <!-- Left face -->
+  <polygon points="70,60 50,100 70,140 90,100" class="edge-line"/>
+  <!-- Right face -->
+  <polygon points="130,60 110,100 130,140 150,100" class="edge-line"/>
+  <!-- Top face -->
+  <polygon points="70,60 110,40 150,60 110,80" class="edge-line"/>
+  <!-- Connecting lines for 3D effect -->
+  <line x1="90" y1="100" x2="110" y2="80" class="edge-line"/>
+  <line x1="90" y1="100" x2="130" y2="140" class="edge-line"/>
+  <line x1="150" y1="100" x2="130" y2="60" class="edge-line"/>
+  <!-- Diagonal line (motion/direction) -->
+  <line x1="40" y1="160" x2="160" y2="40" class="edge-line" stroke-width="1"/>
+</svg>
