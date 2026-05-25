@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>edgeloop — cgi + motion design studio</title>
+  <meta name="description" content="Edgeloop is a Mumbai-based creative studio specializing in CGI and motion design for brands, agencies, and digital platforms.">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+  <div class="scan-overlay"></div>
+  <canvas id="bg-canvas"></canvas>
+
+  <nav>
+    <a href="index.html" class="nav-lockup">
+      <span class="logo-mark logo-mark--sm"></span>
+      <span class="nav-logo">edgeloop</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#our-work">work</a></li>
+      <li><a href="#about">studio</a></li>
+      <li><a href="#contact">contact</a></li>
+    </ul>
+    <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+      call us now
+    </button>
+  </nav>
+
+  <section id="hero">
+    <div class="hero-logo" style="margin-bottom:40px;display:flex;align-items:center;gap:24px">
+      <span class="logo-mark logo-mark--md"></span>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#9a9a9a;line-height:1.6">
+        <strong style="color:#f0f0f0;font-weight:400;display:block">cgi · motion · 3d</strong>
+        a creative studio loop
+      </div>
+    </div>
+    <div class="hero-eyebrow">mumbai — est. 2023</div>
+    <h1 class="hero-title">edgeloop</h1>
+    <p class="hero-sub">cgi + motion design studio</p>
+    <p class="hero-desc">
+      Edgeloop is a creative studio specializing in CGI and motion design for brands,
+      agencies, and digital platforms. We create visually striking content that transforms
+      ideas into engaging visual experiences.
+    </p>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>scroll</span>
+    </div>
+  </section>
+
+  <div class="marquee-section">
+    <div class="marquee-track" id="marquee-track"></div>
+  </div>
+
+  <!-- OUR WORK -->
+  <section id="our-work">
+    <div class="divider" style="margin: 0 0 80px;"></div>
+    <div class="our-work-intro">
+      <div class="section-header reveal" style="margin-bottom: 0;">
+        <span class="section-num">01</span>
+        <h2 class="section-title">our work</h2>
+      </div>
+      <p class="our-work-desc reveal reveal-delay-2">
+        three distinct creative disciplines — each built for a different stage, screen, and audience.
+      </p>
+    </div>
+
+    <div class="work-categories">
+
+      <a href="anamorphic.html" class="work-cat-panel reveal" id="wcat-0">
+        <canvas class="work-cat-canvas" id="wcat-canvas-0"></canvas>
+        <div class="wcat-scan"></div>
+        <div class="wcat-border"></div>
+        <div class="wcat-watermark">01</div>
+        <span class="wcat-num">— 01</span>
+        <div class="wcat-arrow">↗</div>
+        <div class="wcat-info">
+          <div class="wcat-tag">OOH · Immersive · 3D</div>
+          <h3 class="wcat-title">3D Anamorphic</h3>
+          <p class="wcat-desc">Large-format illusion content engineered for LED cubes, mega screens, and out-of-home installations. Brands like Novo Nordisk, EXCON, and Tata AI Summit.</p>
+        </div>
+      </a>
+
+      <a href="brand.html" class="work-cat-panel reveal reveal-delay-1" id="wcat-1">
+        <canvas class="work-cat-canvas" id="wcat-canvas-1"></canvas>
+        <div class="wcat-scan"></div>
+        <div class="wcat-border"></div>
+        <div class="wcat-watermark">02</div>
+        <span class="wcat-num">— 02</span>
+        <div class="wcat-arrow">↗</div>
+        <div class="wcat-info">
+          <div class="wcat-tag">CGI · Motion · Brand</div>
+          <h3 class="wcat-title">Brand Work</h3>
+          <p class="wcat-desc">Product visualization, campaign motion, and digital content built for brands across advertising, retail, and consumer tech. FILA, Crocs, Foot Locker, Ace Blends.</p>
+        </div>
+      </a>
+
+      <a href="artist.html" class="work-cat-panel reveal reveal-delay-2" id="wcat-2">
+        <canvas class="work-cat-canvas" id="wcat-canvas-2"></canvas>
+        <div class="wcat-scan"></div>
+        <div class="wcat-border"></div>
+        <div class="wcat-watermark">03</div>
+        <span class="wcat-num">— 03</span>
+        <div class="wcat-arrow">↗</div>
+        <div class="wcat-info">
+          <div class="wcat-tag">Live · Events · Visual</div>
+          <h3 class="wcat-title">Artist Visuals</h3>
+          <p class="wcat-desc">Stage visuals, live event content, and immersive backdrops for artists, festivals, and performance environments. Built for impact at full scale.</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- SELECTED WORK -->
+  <section id="work">
+    <div class="divider" style="margin: 0 0 80px;"></div>
+    <div class="section-header reveal">
+      <span class="section-num">02</span>
+      <h2 class="section-title">selected work</h2>
+      <div class="section-rule"></div>
+      <span class="tag">2023–2025</span>
+    </div>
+    <div class="work-grid">
+      <div class="project-card project-card-featured reveal" data-tilt>
+        <div class="card-bg">
+          <div class="card-visual">
+            <canvas id="card-canvas-0"></canvas>
+            <video class="card-video" id="card-video-0" preload="metadata" muted playsinline poster="videos/posters/novo-nordisk.jpg">
+              <source src="videos/novo-nordisk.mp4" type="video/mp4">
+            </video>
+            <div class="play-button">▶</div>
+          </div>
+        </div>
+        <div class="card-overlay"></div><div class="card-border"></div>
+        <div class="card-static-title">novo nordisk</div>
+        <div class="card-info"><div class="card-cat">Anamorphic 3D · NSM 2025</div><div class="card-title">Novo Nordisk</div></div>
+      </div>
+      <div class="project-card reveal reveal-delay-1" data-tilt>
+        <div class="card-bg">
+          <div class="card-visual">
+            <canvas id="card-canvas-1"></canvas>
+            <video class="card-video" id="card-video-1" preload="metadata" muted playsinline poster="videos/posters/aditya-birla.jpg">
+              <source src="videos/aditya-birla.mp4" type="video/mp4">
+            </video>
+            <div class="play-button">▶</div>
+          </div>
+        </div>
+        <div class="card-overlay"></div><div class="card-border"></div>
+        <div class="card-static-title">aditya birla</div>
+        <div class="card-info"><div class="card-cat">3D Visual · Brand</div><div class="card-title">Aditya Birla</div></div>
+      </div>
+      <div class="project-card reveal reveal-delay-2" data-tilt>
+        <div class="card-bg">
+          <div class="card-visual">
+            <canvas id="card-canvas-2"></canvas>
+            <video class="card-video" id="card-video-2" preload="metadata" muted playsinline poster="videos/posters/tata-ai-summit.jpg">
+              <source src="videos/tata-ai-summit.mp4" type="video/mp4">
+            </video>
+            <div class="play-button">▶</div>
+          </div>
+        </div>
+        <div class="card-overlay"></div><div class="card-border"></div>
+        <div class="card-static-title">tata ai summit</div>
+        <div class="card-info"><div class="card-cat">Anamorphic 3D · Tech</div><div class="card-title">Tata AI Summit</div></div>
+      </div>
+      <div class="project-card reveal reveal-delay-3" data-tilt>
+        <div class="card-bg">
+          <div class="card-visual">
+            <canvas id="card-canvas-3"></canvas>
+            <video class="card-video" id="card-video-3" preload="metadata" muted playsinline poster="videos/posters/hdfc-life.jpg">
+              <source src="videos/hdfc-life.mp4" type="video/mp4">
+            </video>
+            <div class="play-button">▶</div>
+          </div>
+        </div>
+        <div class="card-overlay"></div><div class="card-border"></div>
+        <div class="card-static-title">hdfc life</div>
+        <div class="card-info"><div class="card-cat">Motion Design · Finance</div><div class="card-title">HDFC Life Sparsh</div></div>
+      </div>
+    </div>
+    <div class="see-more reveal">
+      <a href="https://www.behance.net/gallery/238866345/Edgeloop-2025-Portfolio" target="_blank" rel="noopener" class="btn-outline">view full portfolio <span class="btn-arrow">→</span></a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-inner">
+      <div class="about-left">
+        <div class="section-header reveal" style="margin-bottom: 48px;">
+          <span class="section-num">03</span>
+          <h2 class="section-title">studio</h2>
+        </div>
+        <p class="about-text reveal">Our work spans advertising, branded content, product visuals, and digital campaigns.</p>
+        <p class="about-text-secondary reveal reveal-delay-1">By combining creative direction with strong technical execution, we produce modern visuals designed to capture attention across today's saturated digital landscape — purpose-built for the screens, stages, and surfaces where our clients actually show up.</p>
+        <div class="stat-grid reveal reveal-delay-2">
+          <div class="stat-cell"><div class="stat-num">40+</div><div class="stat-label">projects delivered</div></div>
+          <div class="stat-cell"><div class="stat-num">3</div><div class="stat-label">markets served</div></div>
+          <div class="stat-cell"><div class="stat-num">2+</div><div class="stat-label">years operating</div></div>
+          <div class="stat-cell"><div class="stat-num">∞</div><div class="stat-label">creative loops</div></div>
+        </div>
+      </div>
+      <div class="about-right reveal reveal-delay-1">
+        <ul class="services-list">
+          <li>3D Anamorphic Content <span>— OOH</span></li>
+          <li>CGI Product Visualization <span>— 3D</span></li>
+          <li>Motion Design <span>— MOTION</span></li>
+          <li>Brand Content Production <span>— BRAND</span></li>
+          <li>Digital Campaigns <span>— DIGITAL</span></li>
+          <li>Event Visuals &amp; Installations <span>— LIVE</span></li>
+          <li>AI-Driven Content <span>— AI</span></li>
+        </ul>
+        <div style="margin-top: 60px; display: flex; justify-content: center;">
+          <svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs><filter id="glow-filter"><feGaussianBlur stdDeviation="2" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+            <circle cx="70" cy="70" r="60" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <circle cx="70" cy="70" r="50" stroke="rgba(255,255,255,0.04)" stroke-width="0.5" stroke-dasharray="4 8"/>
+            <g id="cube-group" filter="url(#glow-filter)">
+              <polygon points="70,30 100,48 100,84 70,102 40,84 40,48" stroke="rgba(255,255,255,0.35)" stroke-width="0.8" fill="none"/>
+              <polygon points="70,30 100,48 70,66 40,48" stroke="rgba(255,255,255,0.2)" stroke-width="0.6" fill="rgba(255,255,255,0.015)"/>
+              <line x1="70" y1="66" x2="70" y2="102" stroke="rgba(255,255,255,0.15)" stroke-width="0.6"/>
+              <line x1="40" y1="48" x2="100" y2="84" stroke="rgba(255,255,255,0.06)" stroke-width="0.4"/>
+              <line x1="100" y1="48" x2="40" y2="84" stroke="rgba(255,255,255,0.06)" stroke-width="0.4"/>
+            </g>
+            <circle cx="70" cy="30" r="2" fill="rgba(255,255,255,0.5)"/>
+            <circle cx="100" cy="48" r="1.5" fill="rgba(255,255,255,0.3)"/>
+            <circle cx="40" cy="48" r="1.5" fill="rgba(255,255,255,0.3)"/>
+            <circle cx="70" cy="102" r="2" fill="rgba(255,255,255,0.3)"/>
+            <circle cx="100" cy="84" r="1.5" fill="rgba(255,255,255,0.2)"/>
+            <circle cx="40" cy="84" r="1.5" fill="rgba(255,255,255,0.2)"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="divider" style="margin: 0 0 80px;"></div>
+    <div class="section-header reveal" style="justify-content: center; margin-bottom: 40px;">
+      <span class="section-num">04</span>
+      <h2 class="section-title">contact</h2>
+    </div>
+    <h2 class="contact-title reveal">let's build something</h2>
+    <p class="contact-sub reveal reveal-delay-1">ready when you are</p>
+    <a href="tel:+917304079902" class="contact-phone reveal reveal-delay-2">+91 — 7304079902</a>
+    <div class="reveal reveal-delay-3" style="display: flex; justify-content: center;">
+      <a href="tel:+917304079902" class="btn-outline">call us now <span class="btn-arrow">→</span></a>
+    </div>
+  </section>
+
+  <footer>
+    <a href="index.html" class="nav-lockup">
+      <span class="logo-mark logo-mark--sm"></span>
+      <span class="footer-logo">edgeloop</span>
+    </a>
+    <ul class="footer-links">
+      <li><a href="https://www.instagram.com/edgeloop.in/" target="_blank" rel="noopener">instagram</a></li>
+      <li><a href="https://www.behance.net/gallery/238866345/Edgeloop-2025-Portfolio" target="_blank" rel="noopener">behance</a></li>
+      <li><a href="https://www.linkedin.com/company/edgeloop01/" target="_blank" rel="noopener">linkedin</a></li>
+    </ul>
+    <span class="footer-copy">© 2025 edgeloop. mumbai.</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
