@@ -25,6 +25,9 @@ import { Cube, Ring, Planet } from './models'
 
 /** Global scale for the whole assembly (authored span ≈ 8 units across). */
 export const RIG_SCALE = 0.6
+/** Scale while parked aside (browsing) — larger, so the half-visible object
+ *  fills the viewport vertically like a monolith at the edge. */
+export const RIG_SCALE_PARKED = 0.85
 
 /* ---- motion tuning ---- */
 export const SLIDE_SMOOTH_TIME = 0.5 // seconds for the browse slide (damp3)
@@ -61,6 +64,10 @@ export default function Rig(props: ThreeElements['group']) {
       rm ? 0 : SLIDE_SMOOTH_TIME,
       dt,
     )
+
+    // --- Scale down while parked so the content owns the stage ---
+    const s = view === 'idle' ? RIG_SCALE : RIG_SCALE_PARKED
+    easing.damp3(rig.current.scale, [s, s, s], rm ? 0 : SLIDE_SMOOTH_TIME, dt)
 
     // Continuous turntable — the loop keeps rotating in EVERY state (idle + browsing).
     if (!rm) rig.current.rotation.y += IDLE_SPIN_SPEED * dt

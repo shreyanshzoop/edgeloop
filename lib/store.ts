@@ -106,5 +106,5 @@ export function themeForView(view: View): 'dark' | 'light' {
 export function slideTargetX(view: View, side: Side): number {
   if (view === 'idle') return 0
   // Parked far enough that the object sits half off-screen, freeing the rest for content.
-  return side === 'left' ? -4.0 : 4.0
+  return side === 'left' ? -5.5 : 5.5
 }

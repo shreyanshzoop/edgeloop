@@ -13,7 +13,7 @@ export default function Effects() {
   return (
     <EffectComposer>
       <Bloom
-        intensity={1.15}
+        intensity={0.55}
         luminanceThreshold={0.5}
         luminanceSmoothing={0.25}
         radius={0.75}
