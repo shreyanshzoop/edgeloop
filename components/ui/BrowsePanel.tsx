@@ -55,6 +55,22 @@ function ProjectDetail({ project, onBack }: { project: Project; onBack: () => vo
       </button>
       <h2 className={styles.detailName}>{project.name}</h2>
       {project.stats && <p className={styles.stats}>{project.stats}</p>}
+      {/* images shown inside detail on touch/mobile (no hover preview there) */}
+      {project.images.length > 0 && (
+        <div className={styles.detailImages} data-layout={project.layout}>
+          {project.images.map((img) => (
+            <Image
+              key={img.src}
+              src={img.src}
+              alt={img.alt}
+              width={img.width}
+              height={img.height}
+              className={styles.previewImg}
+              sizes="90vw"
+            />
+          ))}
+        </div>
+      )}
       {vid && (
         <div className={styles.video}>
           <iframe

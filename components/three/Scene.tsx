@@ -7,16 +7,32 @@
  * is TRANSPARENT so the page's themed background (black↔white via ThemeSync)
  * shows through — that's what drives the invert. The object is line-art with
  * unlit materials, so no lights/environment are needed; a single Bloom pass
- * (see Effects) makes the bright lines glow.
+ * (see Effects) makes the bright lines glow. ResponsiveCamera pulls back on
+ * narrow/portrait screens so the wide ring always fits.
  */
 
-import { Suspense } from 'react'
-import { Canvas } from '@react-three/fiber'
+import { Suspense, useEffect } from 'react'
+import * as THREE from 'three'
+import { Canvas, useThree } from '@react-three/fiber'
 import Rig from './Rig'
 import Effects from './Effects'
 
 export const CAMERA_POSITION: [number, number, number] = [0, 0.4, 7]
 export const CAMERA_FOV = 45
+
+function ResponsiveCamera() {
+  const camera = useThree((s) => s.camera) as THREE.PerspectiveCamera
+  const width = useThree((s) => s.size.width)
+  const height = useThree((s) => s.size.height)
+  useEffect(() => {
+    const aspect = width / Math.max(1, height)
+    // Portrait (aspect < 1) needs a larger z so the ~5-unit-wide ring fits.
+    const z = Math.min(16, Math.max(7, 6.6 / aspect))
+    camera.position.setZ(z)
+    camera.updateProjectionMatrix()
+  }, [camera, width, height])
+  return null
+}
 
 export default function Scene() {
   return (
@@ -25,6 +41,7 @@ export default function Scene() {
       dpr={[1, 2]}
       gl={{ antialias: true, alpha: true }}
     >
+      <ResponsiveCamera />
       <Suspense fallback={null}>
         <Rig />
       </Suspense>

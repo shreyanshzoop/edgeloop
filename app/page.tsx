@@ -1,17 +1,15 @@
 'use client'
 
 /**
- * Home — the single-screen experience.
- *
- * The 3D object is the hero; clicking a planet (a discipline) or the cube
- * (about) slides it aside and flips the world white while <BrowsePanel> fills
- * the opposite side with the work. The wordmark returns home; contact opens a
- * modal. ESTD mark + first-run hint round out the persistent chrome.
+ * Home — the single-screen experience. 3D hero + persistent chrome on desktop;
+ * a bottom tab bar (MobileNav) takes over navigation on small/touch screens.
  */
 
+import { useEffect, useState } from 'react'
 import SceneCanvas from '@/components/three/SceneCanvas'
 import BrowsePanel from '@/components/ui/BrowsePanel'
 import Contact from '@/components/ui/Contact'
+import MobileNav from '@/components/ui/MobileNav'
 import { useApp } from '@/lib/store'
 
 const chrome: React.CSSProperties = {
@@ -21,14 +19,28 @@ const chrome: React.CSSProperties = {
   letterSpacing: '0.02em',
 }
 
+function useIsMobile() {
+  const [mobile, setMobile] = useState(false)
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 820px)')
+    const update = () => setMobile(mq.matches)
+    update()
+    mq.addEventListener('change', update)
+    return () => mq.removeEventListener('change', update)
+  }, [])
+  return mobile
+}
+
 export default function Home() {
   const goHome = useApp((s) => s.goHome)
   const view = useApp((s) => s.view)
+  const isMobile = useIsMobile()
 
   return (
     <main style={{ position: 'fixed', inset: 0, overflow: 'hidden', background: 'var(--bg)' }}>
       <SceneCanvas />
       <BrowsePanel />
+      <MobileNav />
 
       <button
         onClick={goHome}
@@ -49,13 +61,15 @@ export default function Home() {
 
       <Contact />
 
-      <span
-        style={{ ...chrome, bottom: '1.4rem', right: '1.6rem', color: 'var(--fg-dim)', fontSize: '0.85rem' }}
-      >
-        estd. 2023
-      </span>
+      {!isMobile && (
+        <span
+          style={{ ...chrome, bottom: '1.4rem', right: '1.6rem', color: 'var(--fg-dim)', fontSize: '0.85rem' }}
+        >
+          estd. 2023
+        </span>
+      )}
 
-      {view === 'idle' && (
+      {view === 'idle' && !isMobile && (
         <span
           style={{ ...chrome, bottom: '1.4rem', left: '1.6rem', color: 'var(--fg-dim)', fontSize: '0.8rem' }}
         >

@@ -139,6 +139,15 @@
   object-fit: contain;
 }
 
+/* images inside the locked detail — hidden on desktop (hover handles preview),
+   shown on touch/mobile */
+.detailImages {
+  display: none;
+  grid-template-columns: 1fr;
+  gap: 0.6rem;
+  width: 100%;
+}
+
 .detail {
   display: flex;
   flex-direction: column;
@@ -189,9 +198,12 @@
   .panel {
     width: 100vw;
     flex-direction: column;
-    gap: 1.5rem;
-    padding: 5rem 6vw 3rem;
+    gap: 1.4rem;
+    /* solid bg so it's a clean reading surface over the 3D; room for the tab bar */
+    background: var(--bg);
+    padding: 4.5rem 6vw calc(5rem + env(safe-area-inset-bottom));
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
   .left,
   .right {
@@ -204,5 +216,19 @@
   }
   .rail {
     flex-basis: auto;
+  }
+  .stage {
+    align-items: stretch;
+    justify-content: flex-start;
+  }
+  .about {
+    margin: 0;
+    max-width: none;
+  }
+  .detail {
+    max-width: none;
+  }
+  .detailImages {
+    display: grid;
   }
 }
