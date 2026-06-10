@@ -105,5 +105,6 @@ export function themeForView(view: View): 'dark' | 'light' {
 /** Where the orbital group parks on the X axis (world units). idle = centered. */
 export function slideTargetX(view: View, side: Side): number {
   if (view === 'idle') return 0
-  return side === 'left' ? -2.2 : 2.2
+  // Parked far enough that the object sits half off-screen, freeing the rest for content.
+  return side === 'left' ? -4.0 : 4.0
 }

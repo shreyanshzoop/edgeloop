@@ -12,7 +12,7 @@
 
 import Image from 'next/image'
 import { site } from '@/content/site'
-import { useApp } from '@/lib/store'
+import { useApp, CATEGORY_IDS } from '@/lib/store'
 import type { Project } from '@/content/schema'
 import styles from './BrowsePanel.module.css'
 
@@ -97,10 +97,19 @@ export default function BrowsePanel() {
   const hoverProject = useApp((s) => s.hoverProject)
   const lockProject = useApp((s) => s.lockProject)
   const back = useApp((s) => s.back)
+  const selectCategory = useApp((s) => s.selectCategory)
 
   const open = view !== 'idle'
   // Panel sits OPPOSITE the object: object-left → panel-right, and vice versa.
   const panelSide = side === 'left' ? 'right' : 'left'
+
+  // Prev/next arrows cycle the disciplines, keeping the object on its current side.
+  const cycle = (delta: number) => {
+    if (!activeCategory) return
+    const n = CATEGORY_IDS.length
+    const i = CATEGORY_IDS.indexOf(activeCategory)
+    selectCategory(CATEGORY_IDS[((i + delta) % n + n) % n], side)
+  }
 
   const category = site.categories.find((c) => c.id === activeCategory)
   const projects = category?.projects ?? []
@@ -113,7 +122,19 @@ export default function BrowsePanel() {
       aria-hidden={!open}
     >
       <div className={styles.rail}>
-        <h2 className={styles.railTitle}>{aboutOpen ? 'about' : (category?.label ?? '')}</h2>
+        {aboutOpen ? (
+          <h2 className={styles.railTitle}>about</h2>
+        ) : category ? (
+          <div className={styles.switcher}>
+            <button className={styles.arrow} onClick={() => cycle(-1)} aria-label="previous discipline">
+              ‹
+            </button>
+            <h2 className={styles.railTitle}>{category.label}</h2>
+            <button className={styles.arrow} onClick={() => cycle(1)} aria-label="next discipline">
+              ›
+            </button>
+          </div>
+        ) : null}
 
         {!aboutOpen && category && (
           <ol className={styles.list}>

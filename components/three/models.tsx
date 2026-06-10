@@ -83,7 +83,10 @@ export function Cube({ color = LINE_COLOR, ...props }: ModelProps) {
       {...props}
       onClick={(e: ThreeEvent<MouseEvent>) => {
         e.stopPropagation()
-        useApp.getState().selectAbout()
+        const st = useApp.getState()
+        // Centered at home → About; parked (browsing) → back to home.
+        if (st.view === 'idle') st.selectAbout()
+        else st.goHome()
       }}
       onPointerOver={(e: ThreeEvent<PointerEvent>) => {
         e.stopPropagation()

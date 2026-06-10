@@ -4,7 +4,7 @@
   position: fixed;
   top: 0;
   bottom: 0;
-  width: 56vw;
+  width: 64vw;
   display: flex;
   gap: 3vw;
   padding: 5.5rem 3vw 3rem;
@@ -48,6 +48,29 @@
   font-weight: 500;
   font-size: 1rem;
   color: var(--fg);
+}
+
+/* prev/next discipline switcher */
+.switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.arrow {
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--fg-muted);
+  padding: 0 0.15rem;
+  transition: color 0.18s ease;
+}
+.arrow:hover,
+.arrow:focus-visible {
+  color: var(--accent);
+  outline: none;
 }
 
 .nav {
