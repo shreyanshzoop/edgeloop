@@ -1,17 +1,85 @@
+/* ============================================================================
+   edgeloop — theme token system
+
+   The signature interaction is a black<->white palette INVERSION tied to app
+   state. The polarity lives on <html data-theme="dark"|"light">, set by
+   components/ui/ThemeSync.tsx from themeForView(view) in lib/store.ts:
+     - dark  = black void at home / idle
+     - light = white while browsing the work
+
+   Token contract (consumed by all UI; names mirrored in lib/theme.ts):
+     --bg --fg --fg-muted --fg-dim --accent --surface --hairline
+   --accent is the single blue and is CONSTANT across both themes.
+   ========================================================================== */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* The blue accent never inverts. */
+  --accent: #2d6cff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* DARK — black void (home / idle). near-black bg, light-grey fg. */
+[data-theme='dark'] {
+  --bg: #0a0a0a;
+  --fg: #aaaaaa;
+  --fg-muted: #999999;
+  --fg-dim: #555555;
+  --surface: #141414;
+  --hairline: #272727;
+  color-scheme: dark;
+}
+
+/* LIGHT — white while browsing the work. brand greys on white. */
+[data-theme='light'] {
+  --bg: #ffffff;
+  --fg: #555555;
+  --fg-muted: #999999;
+  --fg-dim: #aaaaaa;
+  --surface: #f2f2f2;
+  --hairline: #d8d8d8;
+  color-scheme: light;
+}
+
+/* Fallback if data-theme is somehow absent: behave as dark (the default). */
+:root:not([data-theme]) {
+  --bg: #0a0a0a;
+  --fg: #aaaaaa;
+  --fg-muted: #999999;
+  --fg-dim: #555555;
+  --surface: #141414;
+  --hairline: #272727;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
   height: 100%;
+  /* DM Mono via next/font CSS var, with a mono fallback stack. */
+  font-family: var(--font-dm-mono), ui-monospace, 'SFMono-Regular', 'Menlo',
+    'Consolas', monospace;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100dvh;
+  background-color: var(--bg);
+  color: var(--fg);
+  font-size: 1rem;
+  font-weight: 400;
+  /* Global lowercase per the design direction. */
+  text-transform: lowercase;
+  /* The invert: smoothly cross-fade the palette when data-theme flips. */
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 html,
@@ -20,30 +88,52 @@ body {
   overflow-x: hidden;
 }
 
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
 a {
   color: inherit;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  text-transform: inherit;
+  background: none;
+  border: none;
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Honor reduced-motion: no palette cross-fade, instant invert. */
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

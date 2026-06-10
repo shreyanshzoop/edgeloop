@@ -1,0 +1,208 @@
+/* The browse "switchboard" — fills the side opposite the 3D object. */
+
+.panel {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 56vw;
+  display: flex;
+  gap: 3vw;
+  padding: 5.5rem 3vw 3rem;
+  box-sizing: border-box;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.4s ease,
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 5;
+}
+
+.left {
+  left: 0;
+  transform: translateX(-24px);
+  flex-direction: row;
+}
+.right {
+  right: 0;
+  transform: translateX(24px);
+  flex-direction: row-reverse;
+}
+
+/* Declared after .left/.right so it wins when the panel is open. */
+.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+/* ---- rail: discipline nav + project list ---- */
+.rail {
+  flex: 0 0 13rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  min-width: 0;
+}
+
+.railTitle {
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--fg);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+}
+.navItem {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  color: var(--fg-muted);
+  transition: color 0.18s ease;
+}
+.navItem:hover,
+.navItem:focus-visible {
+  color: var(--fg);
+  outline: none;
+}
+.navItem.active {
+  color: var(--accent);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.item {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  padding: 0.1rem 0;
+  text-align: left;
+  color: var(--fg-muted);
+  transition: color 0.18s ease;
+}
+.item:hover,
+.item:focus-visible {
+  color: var(--accent);
+  outline: none;
+}
+.item.playing {
+  color: var(--accent);
+}
+
+/* ---- stage: preview / detail / about ---- */
+.stage {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.prompt {
+  color: var(--fg-dim);
+}
+.about {
+  max-width: 34rem;
+  line-height: 1.75;
+  color: var(--fg);
+  /* sit toward the right of the stage, away from the object */
+  margin-left: auto;
+  margin-right: clamp(2rem, 7vw, 9rem);
+}
+
+.previewGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 44rem;
+}
+.previewGrid[data-layout='single'],
+.previewGrid[data-layout='stack'] {
+  grid-template-columns: 1fr;
+}
+.previewImg {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 42rem;
+}
+.back {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  color: var(--fg-muted);
+}
+.back:hover {
+  color: var(--fg);
+}
+.detailName {
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--fg);
+}
+.stats {
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+.desc {
+  color: var(--fg-muted);
+  line-height: 1.75;
+}
+.video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--surface);
+}
+.video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ---- narrow screens: panel goes full-width and scrolls ---- */
+@media (max-width: 820px) {
+  .panel {
+    width: 100vw;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 5rem 6vw 3rem;
+    overflow-y: auto;
+  }
+  .left,
+  .right {
+    left: 0;
+    right: 0;
+    transform: translateY(18px);
+  }
+  .open {
+    transform: translateY(0);
+  }
+  .rail {
+    flex-basis: auto;
+  }
+}

@@ -1,0 +1,416 @@
+[
+  {
+    "category": "anamorphics",
+    "name": "NSM Launch Event",
+    "slug": "nsm-launch-event",
+    "layout": "stack",
+    "images": [
+      {
+        "src": "/media/anamorphics/nsm-launch-event/0.png",
+        "width": 1100,
+        "height": 502,
+        "transparent": true
+      },
+      {
+        "src": "/media/anamorphics/nsm-launch-event/1.png",
+        "width": 1100,
+        "height": 502,
+        "transparent": true
+      },
+      {
+        "src": "/media/anamorphics/nsm-launch-event/2.png",
+        "width": 1100,
+        "height": 502,
+        "transparent": true
+      }
+    ],
+    "htmlDesc": "3D anamorphic film for Novo Nordisk's national sales meeting, tracing the brand's insulin heritage from 1960 through to the Insuject-X pen. Built for a large-format LED stage and played to around 900 sales and medical staff over a 3-day meet."
+  },
+  {
+    "category": "anamorphics",
+    "name": "Excon Billboard",
+    "slug": "excon-billboard",
+    "images": [
+      {
+        "src": "/media/anamorphics/excon-billboard/0.png",
+        "width": 1000,
+        "height": 562,
+        "transparent": true
+      },
+      {
+        "src": "/media/anamorphics/excon-billboard/1.png",
+        "width": 1000,
+        "height": 562,
+        "transparent": true
+      },
+      {
+        "src": "/media/anamorphics/excon-billboard/2.png",
+        "width": 1000,
+        "height": 562,
+        "transparent": true
+      },
+      {
+        "src": "/media/anamorphics/excon-billboard/3.png",
+        "width": 1000,
+        "height": 562,
+        "transparent": true
+      }
+    ],
+    "htmlDesc": "Title reveal for CII EXCON 2023, billed as 'The Largest Ever' edition of South Asia's premier construction equipment expo. Staged as a 3D anamorphic piece on the venue's main LED, seen by a footfall of around 70,000 visitors over 5 days."
+  },
+  {
+    "category": "anamorphics",
+    "name": "Aditya Birla Analyst Day",
+    "slug": "aditya-birla-analyst-day",
+    "images": [
+      {
+        "src": "/media/anamorphics/aditya-birla-analyst-day/0.png",
+        "width": 1000,
+        "height": 594,
+        "transparent": true
+      },
+      {
+        "src": "/media/anamorphics/aditya-birla-analyst-day/1.png",
+        "width": 1000,
+        "height": 594,
+        "transparent": true
+      },
+      {
+        "src": "/media/anamorphics/aditya-birla-analyst-day/2.png",
+        "width": 1000,
+        "height": 594,
+        "transparent": true
+      },
+      {
+        "src": "/media/anamorphics/aditya-birla-analyst-day/3.png",
+        "width": 1000,
+        "height": 594,
+        "transparent": true
+      }
+    ],
+    "htmlDesc": "Pan-India anamorphic visual for Aditya Birla Capital, framing the brand across glowing maps of the country. Produced for the company's annual leadership conclave and presented to around 500 guests."
+  },
+  {
+    "category": "anamorphics",
+    "name": "TATA Accelerating India",
+    "slug": "tata-accelerating-india",
+    "layout": "stack",
+    "images": [
+      {
+        "src": "/media/anamorphics/tata-accelerating-india/0.jpg",
+        "width": 1300,
+        "height": 433,
+        "transparent": false
+      },
+      {
+        "src": "/media/anamorphics/tata-accelerating-india/1.jpg",
+        "width": 1300,
+        "height": 433,
+        "transparent": false
+      },
+      {
+        "src": "/media/anamorphics/tata-accelerating-india/2.jpg",
+        "width": 1300,
+        "height": 433,
+        "transparent": false
+      }
+    ]
+  },
+  {
+    "category": "anamorphics",
+    "name": "HDFC Annual Sparsh",
+    "slug": "hdfc-annual-sparsh",
+    "layout": "stack",
+    "images": [
+      {
+        "src": "/media/anamorphics/hdfc-annual-sparsh/0.png",
+        "width": 1100,
+        "height": 275,
+        "transparent": true
+      },
+      {
+        "src": "/media/anamorphics/hdfc-annual-sparsh/1.png",
+        "width": 1100,
+        "height": 275,
+        "transparent": true
+      },
+      {
+        "src": "/media/anamorphics/hdfc-annual-sparsh/2.png",
+        "width": 1100,
+        "height": 275,
+        "transparent": true
+      }
+    ],
+    "htmlDesc": "Anamorphic stage content for HDFC Life's Annual Sparsh 2024, carrying the brand's signature growth-arrow motif. Created for the annual flagship event and shown to about 800 attendees."
+  },
+  {
+    "category": "anamorphics",
+    "name": "Mindgate",
+    "slug": "mindgate",
+    "images": [
+      {
+        "src": "/media/anamorphics/mindgate/0.png",
+        "width": 1000,
+        "height": 476,
+        "transparent": true
+      },
+      {
+        "src": "/media/anamorphics/mindgate/1.png",
+        "width": 1000,
+        "height": 476,
+        "transparent": true
+      },
+      {
+        "src": "/media/anamorphics/mindgate/2.png",
+        "width": 1000,
+        "height": 476,
+        "transparent": true
+      },
+      {
+        "src": "/media/anamorphics/mindgate/3.png",
+        "width": 1000,
+        "height": 476,
+        "transparent": true
+      }
+    ],
+    "htmlDesc": "Anamorphic brand reveal for Mindgate — 'Delivering Innovation' — staged inside a clean light-box environment. Produced for a fintech industry summit with around 400 attendees."
+  },
+  {
+    "category": "artists",
+    "name": "Aminjaz",
+    "slug": "aminjaz",
+    "layout": "trio",
+    "images": [
+      {
+        "src": "/media/artists/aminjaz/0.jpg",
+        "width": 1280,
+        "height": 1280,
+        "transparent": false
+      },
+      {
+        "src": "/media/artists/aminjaz/1.jpg",
+        "width": 1280,
+        "height": 720,
+        "transparent": false
+      },
+      {
+        "src": "/media/artists/aminjaz/2.jpg",
+        "width": 1280,
+        "height": 1280,
+        "transparent": false
+      }
+    ],
+    "htmlDesc": "A set of CGI motion frames produced under the Aminjaz banner — a hero prop study, a playful whack-a-DJ concept, and a neon arcade machine. Three distinct ideas tied together by bold lighting and clean render craft."
+  },
+  {
+    "category": "artists",
+    "name": "Stuvi",
+    "slug": "stuvi",
+    "images": [],
+    "htmlDesc": "CGI motion and visual content produced for Stuvi."
+  },
+  {
+    "category": "artists",
+    "name": "Kimera",
+    "slug": "kimera",
+    "images": [],
+    "htmlDesc": "CGI motion and visual content produced for Kimera."
+  },
+  {
+    "category": "artists",
+    "name": "The Sincerities",
+    "slug": "the-sincerities",
+    "layout": "duo",
+    "images": [
+      {
+        "src": "/media/artists/the-sincerities/0.jpg",
+        "width": 1280,
+        "height": 720,
+        "transparent": false
+      },
+      {
+        "src": "/media/artists/the-sincerities/1.jpg",
+        "width": 1280,
+        "height": 720,
+        "transparent": false
+      }
+    ],
+    "htmlDesc": "Two CGI motion pieces for The Sincerities — a moonlit beach-house drive and a bold yellow colour study. Atmospheric, cinematic visuals built to set a mood."
+  },
+  {
+    "category": "brands",
+    "name": "Fila",
+    "slug": "fila",
+    "images": [
+      {
+        "src": "/media/brands/fila/0.jpg",
+        "width": 474,
+        "height": 836,
+        "transparent": false
+      }
+    ],
+    "htmlDesc": "CGI brand film for FILA, with the glowing FILA wordmark riding the back of a truck speeding down an open highway. The cinematic motion and neon treatment give the sportswear brand a bold, on-the-move energy. Created to hype FILA x AYC at Jio World, Mumbai."
+  },
+  {
+    "category": "brands",
+    "name": "Ace Blends",
+    "slug": "ace-blends",
+    "images": [
+      {
+        "src": "/media/brands/ace-blends/0.jpg",
+        "width": 577,
+        "height": 1024,
+        "transparent": false
+      }
+    ],
+    "htmlDesc": "Full CGI product film for Ace Blends, featuring the ABG Blend Shroom Coffee pack moving along a robotic production line. Sleek mechanical arms and warm metallic tones give the functional-beverage brand a futuristic, premium edge. Engineered to make the launch date land with impact."
+  },
+  {
+    "category": "brands",
+    "name": "Footlocker",
+    "slug": "footlocker",
+    "images": [
+      {
+        "src": "/media/brands/footlocker/0.jpg",
+        "width": 588,
+        "height": 1077,
+        "transparent": false
+      }
+    ],
+    "htmlDesc": "Motion design and product visuals for a Foot Locker drop. The brand's striped-referee mark is revealed inside a rugged hardcase, framing the release like a prized, protected collectible. A tight, suspenseful reveal made for sneaker-launch hype."
+  },
+  {
+    "category": "brands",
+    "name": "Crocs",
+    "slug": "crocs",
+    "images": [
+      {
+        "src": "/media/brands/crocs/0.jpg",
+        "width": 591,
+        "height": 1077,
+        "transparent": false
+      }
+    ],
+    "htmlDesc": "Stylised brand CGI for Crocs, staging a pair of classic clogs decked with Jibbitz charms against a rain-flecked sunset landscape. The dreamy, cinematic setting turns an everyday product into a mood piece. Built to feel playful and aspirational for a lifestyle-led campaign."
+  },
+  {
+    "category": "brands",
+    "name": "Paapi",
+    "slug": "paapi",
+    "images": [
+      {
+        "src": "/media/brands/paapi/0.jpg",
+        "width": 598,
+        "height": 1079,
+        "transparent": false
+      }
+    ],
+    "htmlDesc": "Moody CGI product visual for Paapi Coffee Absinthe, with the labelled bottle resting on a wooden table against a dusk beach backdrop. The mellow, atmospheric lighting leans into the drink's craft, after-dark identity. Made to feel intimate, premium and brand-distinct."
+  },
+  {
+    "category": "djsets",
+    "name": "Kitty Party - Karan Kanchan",
+    "slug": "kitty-party-karan-kanchan",
+    "images": [
+      {
+        "src": "/media/djsets/kitty-party-karan-kanchan/0.jpg",
+        "width": 1280,
+        "height": 720,
+        "transparent": false
+      },
+      {
+        "src": "/media/djsets/kitty-party-karan-kanchan/1.jpg",
+        "width": 1280,
+        "height": 720,
+        "transparent": false
+      },
+      {
+        "src": "/media/djsets/kitty-party-karan-kanchan/2.jpg",
+        "width": 1280,
+        "height": 720,
+        "transparent": false
+      },
+      {
+        "src": "/media/djsets/kitty-party-karan-kanchan/3.jpg",
+        "width": 1280,
+        "height": 720,
+        "transparent": false
+      }
+    ],
+    "htmlDesc": "Set visuals and live coverage for Karan Kanchan's 'Kitty Party' show, drenched in signature pink-and-blue stage light. Shot largely from behind the decks, the frames capture both the artist in flow and the crowd going off in front of him. A bold, high-energy gallery built to carry the party's identity online."
+  },
+  {
+    "category": "djsets",
+    "name": "Nucleya x Stuvi x Aminjaz",
+    "slug": "nucleya-x-stuvi-x-aminjaz",
+    "images": []
+  },
+  {
+    "category": "djsets",
+    "name": "Halloween - Dev Raiyani",
+    "slug": "halloween-dev-raiyani",
+    "images": [
+      {
+        "src": "/media/djsets/halloween-dev-raiyani/0.jpg",
+        "width": 1280,
+        "height": 720,
+        "transparent": false
+      },
+      {
+        "src": "/media/djsets/halloween-dev-raiyani/1.jpg",
+        "width": 1280,
+        "height": 720,
+        "transparent": false
+      },
+      {
+        "src": "/media/djsets/halloween-dev-raiyani/2.jpg",
+        "width": 1280,
+        "height": 720,
+        "transparent": false
+      },
+      {
+        "src": "/media/djsets/halloween-dev-raiyani/3.jpg",
+        "width": 1280,
+        "height": 720,
+        "transparent": false
+      }
+    ],
+    "htmlDesc": "Event coverage for antiSOCIAL's Halloween Bash, a packed warehouse strung with cobwebs and ghouls under eerie red and green light. The photography captures the haunted-house production design and the costumed crowd in full swing. Moody, atmospheric frames that bottle the chaos of the night."
+  },
+  {
+    "category": "djsets",
+    "name": "Khar Social - Stuvi",
+    "slug": "khar-social-stuvi",
+    "images": []
+  },
+  {
+    "category": "djsets",
+    "name": "Notice - Dev Raiyani",
+    "slug": "notice-dev-raiyani",
+    "images": []
+  },
+  {
+    "category": "djsets",
+    "name": "Rayas Roof EP 1 - Ria Palkar",
+    "slug": "rayas-roof-ep-1-ria-palkar",
+    "images": []
+  },
+  {
+    "category": "djsets",
+    "name": "Rayas Roof EP 2 - Ria Palkar",
+    "slug": "rayas-roof-ep-2-ria-palkar",
+    "images": []
+  },
+  {
+    "category": "djsets",
+    "name": "Rayas Roof EP 3 - Ria Palkar",
+    "slug": "rayas-roof-ep-3-ria-palkar",
+    "images": []
+  },
+  {
+    "category": "djsets",
+    "name": "Rayas Roof EP 4 - Ria Palkar",
+    "slug": "rayas-roof-ep-4-ria-palkar",
+    "images": []
+  }
+]
