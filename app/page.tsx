@@ -71,7 +71,7 @@ export default function Home() {
 
       {view === 'idle' && !isMobile && (
         <span
-          style={{ ...chrome, bottom: '1.4rem', left: '1.6rem', color: 'var(--fg-dim)', fontSize: '0.8rem' }}
+          style={{ ...chrome, top: '1.4rem', right: '1.6rem', color: 'var(--fg-dim)', fontSize: '0.8rem' }}
         >
           click a planet to explore · the cube for about
         </span>
