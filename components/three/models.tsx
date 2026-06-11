@@ -12,7 +12,7 @@
  * studio's composition (cube at origin, tilted ring, planets baked on the ring).
  */
 
-import { useMemo, useRef } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { useFrame, useThree, type ThreeElements, type ThreeEvent } from '@react-three/fiber'
 import { useGLTF, Html } from '@react-three/drei'
@@ -147,12 +147,17 @@ export function Ring({ color = LINE_COLOR, ...props }: ModelProps) {
   )
 }
 
+/** How long a planet's name lingers after the cursor leaves its hit area. */
+export const LABEL_LINGER_MS = 1500
+/** Label anchor height above the planet center (local units). */
+const LABEL_Y_OFFSET = 0.5
+
 interface PlanetProps extends ModelProps {
   /** 0..3 → planet-1..4.glb → discipline order in CATEGORY_IDS. */
   index: number
   reduced?: boolean
-  /** Show the discipline name floating above this planet. */
-  labelVisible?: boolean
+  /** Objects the label occludes against (e.g. the solid cube). */
+  occludeRef?: React.RefObject<THREE.Object3D | null>
 }
 
 /** Forgiving hit area: invisible sphere around each planet so clicks land even
@@ -167,7 +172,7 @@ export function Planet({
   index,
   color = LINE_COLOR,
   reduced = false,
-  labelVisible = false,
+  occludeRef,
   ...props
 }: PlanetProps) {
   const { root, materials } = useFlatClone(MODEL_PATHS.planets[index], color)
@@ -175,6 +180,14 @@ export function Planet({
   const hovered = useRef(false)
   const base = useMemo(() => new THREE.Color(color), [color])
   const hover = useMemo(() => new THREE.Color(HOVER_ACCENT), [])
+
+  // This planet's own name label: shows on hover (incl. the halo), lingers
+  // LABEL_LINGER_MS after the cursor leaves.
+  const [labelOn, setLabelOn] = useState(false)
+  const labelTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  useEffect(() => () => {
+    if (labelTimer.current) clearTimeout(labelTimer.current)
+  }, [])
 
   // The planet's position is baked into the GLB mesh — find its center once so
   // the hit halo can sit exactly on it.
@@ -191,6 +204,12 @@ export function Planet({
   const setHover = (on: boolean) => {
     hovered.current = on
     if (typeof document !== 'undefined') document.body.style.cursor = on ? 'pointer' : 'auto'
+    if (labelTimer.current) clearTimeout(labelTimer.current)
+    if (on) {
+      setLabelOn(true)
+    } else {
+      labelTimer.current = setTimeout(() => setLabelOn(false), LABEL_LINGER_MS)
+    }
   }
 
   return (
@@ -213,19 +232,26 @@ export function Planet({
         <sphereGeometry args={[PLANET_HIT_RADIUS, 12, 12]} />
         <meshBasicMaterial transparent opacity={0} depthWrite={false} />
       </mesh>
-      {/* discipline name floating above the planet; tracks it as the loop spins.
-          Fades via CSS; the accent text-shadow gives it the shine. */}
-      <Html position={center} center zIndexRange={[4, 0]} style={{ pointerEvents: 'none' }}>
+      {/* This planet's name, anchored just above it; tracks it as the loop spins.
+          `occlude` raycasts against the solid cube, so the label genuinely hides
+          when the planet passes behind it. Accent text-shadow gives the shine. */}
+      <Html
+        position={[center.x, center.y + LABEL_Y_OFFSET, center.z]}
+        center
+        zIndexRange={[4, 0]}
+        occlude={occludeRef ? [occludeRef as React.RefObject<THREE.Object3D>] : undefined}
+        style={{ pointerEvents: 'none' }}
+      >
         <span
           style={{
             display: 'block',
-            transform: 'translateY(-26px)',
+            transform: 'translateY(-8px)',
             fontSize: '0.65rem',
             letterSpacing: '0.06em',
             whiteSpace: 'nowrap',
             color: 'var(--fg)',
             textShadow: '0 0 10px var(--accent), 0 0 3px currentColor',
-            opacity: labelVisible ? 1 : 0,
+            opacity: labelOn ? 1 : 0,
             transition: 'opacity 0.45s ease',
             userSelect: 'none',
           }}
