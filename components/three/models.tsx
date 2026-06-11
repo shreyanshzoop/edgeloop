@@ -52,6 +52,20 @@ interface ModelProps extends GroupProps {
  */
 export function Cube({ color = LINE_COLOR, ...props }: ModelProps) {
   const { scene } = useGLTF(MODEL_PATHS.center)
+
+  // Solid black interior — the cube is NOT see-through: it occludes its own back
+  // edges and the ring passing behind it. Slightly shrunk so the edge lines stay
+  // crisp on the surface (no z-fighting). Doubles as the click target.
+  const fill = useMemo(() => {
+    const root = skeletonClone(scene) as THREE.Object3D
+    const mat = new THREE.MeshBasicMaterial({ color: new THREE.Color('#0a0a0a'), toneMapped: false })
+    root.traverse((o) => {
+      const m = o as THREE.Mesh
+      if (m.isMesh) m.material = mat
+    })
+    return root
+  }, [scene])
+
   const { edges, materials } = useMemo(() => {
     const edges: THREE.BufferGeometry[] = []
     const materials: THREE.LineBasicMaterial[] = []
@@ -94,11 +108,7 @@ export function Cube({ color = LINE_COLOR, ...props }: ModelProps) {
       }}
       onPointerOut={() => setCursor('auto')}
     >
-      {/* invisible click target filling the cube volume (~4³) */}
-      <mesh>
-        <boxGeometry args={[4, 4, 4]} />
-        <meshBasicMaterial transparent opacity={0} depthWrite={false} />
-      </mesh>
+      <primitive object={fill} scale={0.996} />
       {edges.map((g, i) => (
         <lineSegments key={i} geometry={g} material={materials[i]} />
       ))}
