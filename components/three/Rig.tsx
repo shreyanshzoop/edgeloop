@@ -29,8 +29,12 @@ export const RIG_SCALE_PARKED = 0.85
 
 /* ---- motion tuning ---- */
 export const SLIDE_SMOOTH_TIME = 0.5 // seconds for the browse slide (damp3)
+/** Touch-first devices get a slower loop so taps can land on the planets. */
+const COARSE_POINTER =
+  typeof window !== 'undefined' && window.matchMedia?.('(pointer: coarse)').matches === true
+
 export const CUBE_SPIN_SPEED = 0.18 // rad/s — cube turntable on its own axis
-export const LOOP_SPIN_SPEED = 0.28 // rad/s — loop revolving around the ring's axis
+export const LOOP_SPIN_SPEED = COARSE_POINTER ? 0.16 : 0.28 // rad/s — loop revolution
 export const FLOAT_AMPLITUDE = 0.1 // world units of gentle Y bob at idle
 export const FLOAT_SPEED = 0.6 // rad/s of the float sine
 export const PARALLAX_STRENGTH = 0.12 // pointer nudge on idle tilt

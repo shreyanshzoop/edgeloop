@@ -160,10 +160,15 @@ interface PlanetProps extends ModelProps {
   occludeRef?: React.RefObject<THREE.Object3D | null>
 }
 
+/** True on touch-first devices (no fine pointer) — fingers need bigger targets. */
+const COARSE_POINTER =
+  typeof window !== 'undefined' && window.matchMedia?.('(pointer: coarse)').matches === true
+
 /** Forgiving hit area: invisible sphere around each planet so clicks land even
  *  10–20px outside the visible cube (or when the spin carries it past the cursor).
- *  Planets are ~0.4 units; this radius adds a generous halo at current framing. */
-export const PLANET_HIT_RADIUS = 0.55
+ *  Planets are ~0.4 units; much larger on touch, where the camera also sits
+ *  farther back and fingers are less precise than a cursor. */
+export const PLANET_HIT_RADIUS = COARSE_POINTER ? 1.0 : 0.55
 
 /** PLANET — a bright node on the ring. Click → its discipline (slides toward the
  *  side the star is on); hover lights it brand-blue. Events live on the group so

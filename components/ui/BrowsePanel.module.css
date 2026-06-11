@@ -333,6 +333,33 @@
   .open {
     pointer-events: auto;
   }
+
+  /* --- mobile sizing: images + type --- */
+  .detailImages {
+    gap: 0.5rem;
+  }
+  .previewImg {
+    max-height: 42vh; /* one image never dominates the whole screen */
+    object-fit: contain;
+  }
+  .railTitle {
+    font-size: 0.95rem;
+  }
+  .detailName {
+    font-size: 1rem;
+  }
+  .stats {
+    font-size: 0.8rem;
+  }
+  .desc {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+  /* comfortable tap targets on the project list */
+  .item {
+    padding: 0.45rem 0;
+    font-size: 0.95rem;
+  }
   .left,
   .right {
     left: 0;

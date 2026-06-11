@@ -26,8 +26,9 @@ function ResponsiveCamera() {
   const height = useThree((s) => s.size.height)
   useEffect(() => {
     const aspect = width / Math.max(1, height)
-    // Portrait (aspect < 1) needs a larger z so the ~5-unit-wide ring fits.
-    const z = Math.min(16, Math.max(7, 6.6 / aspect))
+    // Portrait (aspect < 1) needs a larger z so the wide ring fits — but keep it
+    // as close as possible so the sculpture stays a tappable size on phones.
+    const z = Math.min(13, Math.max(7, 5.8 / aspect))
     camera.position.setZ(z)
     camera.updateProjectionMatrix()
   }, [camera, width, height])
