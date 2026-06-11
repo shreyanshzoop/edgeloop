@@ -64,15 +64,27 @@
 
 .ghostPrev,
 .ghostNext {
+  background: none;
+  border: none;
+  font: inherit;
+  padding: 0;
+  cursor: pointer;
   color: var(--fg-dim);
   font-size: 0.9rem;
   white-space: nowrap;
   overflow: hidden;
   max-width: 4.5rem;
   flex: 0 1 auto;
-  pointer-events: none;
   user-select: none;
   animation: swapIn 0.25s ease;
+  transition: color 0.18s ease;
+}
+.ghostPrev:hover,
+.ghostNext:hover,
+.ghostPrev:focus-visible,
+.ghostNext:focus-visible {
+  color: var(--fg-muted);
+  outline: none;
 }
 /* previous section: show the TAIL of its name, fading out to the left */
 .ghostPrev {

@@ -133,9 +133,14 @@ export default function BrowsePanel() {
           <h2 className={styles.railTitle}>about</h2>
         ) : category ? (
           <div className={styles.switcher}>
-            <span key={`p-${category.id}`} className={styles.ghostPrev} aria-hidden>
+            <button
+              key={`p-${category.id}`}
+              className={styles.ghostPrev}
+              onClick={() => cycle(-1)}
+              aria-label={`go to ${prevLabel}`}
+            >
               {prevLabel}
-            </span>
+            </button>
             <button className={styles.arrow} onClick={() => cycle(-1)} aria-label="previous discipline">
               ‹
             </button>
@@ -145,9 +150,14 @@ export default function BrowsePanel() {
             <button className={styles.arrow} onClick={() => cycle(1)} aria-label="next discipline">
               ›
             </button>
-            <span key={`n-${category.id}`} className={styles.ghostNext} aria-hidden>
+            <button
+              key={`n-${category.id}`}
+              className={styles.ghostNext}
+              onClick={() => cycle(1)}
+              aria-label={`go to ${nextLabel}`}
+            >
               {nextLabel}
-            </span>
+            </button>
           </div>
         ) : null}
 
