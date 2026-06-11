@@ -12,7 +12,7 @@
 
 import Image from 'next/image'
 import { site } from '@/content/site'
-import { useApp, CATEGORY_IDS } from '@/lib/store'
+import { useApp, CATEGORY_IDS, CATEGORY_LABELS } from '@/lib/store'
 import type { Project } from '@/content/schema'
 import styles from './BrowsePanel.module.css'
 
@@ -111,6 +111,13 @@ export default function BrowsePanel() {
     selectCategory(CATEGORY_IDS[((i + delta) % n + n) % n], side)
   }
 
+  // Neighboring sections peek in, faded, on either side of the switcher:
+  //   …morphic ‹ brands › dj se…
+  const catIndex = activeCategory ? CATEGORY_IDS.indexOf(activeCategory) : -1
+  const n = CATEGORY_IDS.length
+  const prevLabel = catIndex >= 0 ? CATEGORY_LABELS[CATEGORY_IDS[(catIndex - 1 + n) % n]] : ''
+  const nextLabel = catIndex >= 0 ? CATEGORY_LABELS[CATEGORY_IDS[(catIndex + 1) % n]] : ''
+
   const category = site.categories.find((c) => c.id === activeCategory)
   const projects = category?.projects ?? []
   const locked = projects.find((p) => p.slug === lockedProjectId) ?? null
@@ -126,13 +133,21 @@ export default function BrowsePanel() {
           <h2 className={styles.railTitle}>about</h2>
         ) : category ? (
           <div className={styles.switcher}>
+            <span key={`p-${category.id}`} className={styles.ghostPrev} aria-hidden>
+              {prevLabel}
+            </span>
             <button className={styles.arrow} onClick={() => cycle(-1)} aria-label="previous discipline">
               ‹
             </button>
-            <h2 className={styles.railTitle}>{category.label}</h2>
+            <h2 key={category.id} className={styles.railTitle}>
+              {category.label}
+            </h2>
             <button className={styles.arrow} onClick={() => cycle(1)} aria-label="next discipline">
               ›
             </button>
+            <span key={`n-${category.id}`} className={styles.ghostNext} aria-hidden>
+              {nextLabel}
+            </span>
           </div>
         ) : null}
 
