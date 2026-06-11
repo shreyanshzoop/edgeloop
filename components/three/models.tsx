@@ -15,9 +15,9 @@
 import { useMemo, useRef } from 'react'
 import * as THREE from 'three'
 import { useFrame, useThree, type ThreeElements, type ThreeEvent } from '@react-three/fiber'
-import { useGLTF } from '@react-three/drei'
+import { useGLTF, Html } from '@react-three/drei'
 import { clone as skeletonClone } from 'three/examples/jsm/utils/SkeletonUtils.js'
-import { useApp, CATEGORY_IDS } from '@/lib/store'
+import { useApp, CATEGORY_IDS, CATEGORY_LABELS } from '@/lib/store'
 
 const MODEL_PATHS = {
   center: '/models/center-box.glb',
@@ -151,6 +151,8 @@ interface PlanetProps extends ModelProps {
   /** 0..3 → planet-1..4.glb → discipline order in CATEGORY_IDS. */
   index: number
   reduced?: boolean
+  /** Show the discipline name floating above this planet. */
+  labelVisible?: boolean
 }
 
 /** Forgiving hit area: invisible sphere around each planet so clicks land even
@@ -161,7 +163,13 @@ export const PLANET_HIT_RADIUS = 0.55
 /** PLANET — a bright node on the ring. Click → its discipline (slides toward the
  *  side the star is on); hover lights it brand-blue. Events live on the group so
  *  both the planet mesh and its invisible hit halo trigger them. */
-export function Planet({ index, color = LINE_COLOR, reduced = false, ...props }: PlanetProps) {
+export function Planet({
+  index,
+  color = LINE_COLOR,
+  reduced = false,
+  labelVisible = false,
+  ...props
+}: PlanetProps) {
   const { root, materials } = useFlatClone(MODEL_PATHS.planets[index], color)
   const camera = useThree((s) => s.camera)
   const hovered = useRef(false)
@@ -205,6 +213,26 @@ export function Planet({ index, color = LINE_COLOR, reduced = false, ...props }:
         <sphereGeometry args={[PLANET_HIT_RADIUS, 12, 12]} />
         <meshBasicMaterial transparent opacity={0} depthWrite={false} />
       </mesh>
+      {/* discipline name floating above the planet; tracks it as the loop spins.
+          Fades via CSS; the accent text-shadow gives it the shine. */}
+      <Html position={center} center zIndexRange={[4, 0]} style={{ pointerEvents: 'none' }}>
+        <span
+          style={{
+            display: 'block',
+            transform: 'translateY(-26px)',
+            fontSize: '0.65rem',
+            letterSpacing: '0.06em',
+            whiteSpace: 'nowrap',
+            color: 'var(--fg)',
+            textShadow: '0 0 10px var(--accent), 0 0 3px currentColor',
+            opacity: labelVisible ? 1 : 0,
+            transition: 'opacity 0.45s ease',
+            userSelect: 'none',
+          }}
+        >
+          {CATEGORY_LABELS[CATEGORY_IDS[index]]}
+        </span>
+      </Html>
     </group>
   )
 }

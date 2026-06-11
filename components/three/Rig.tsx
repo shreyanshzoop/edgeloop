@@ -14,7 +14,7 @@
  * the loop carry independent rotations so they read as two separate motions.
  */
 
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { useFrame, type ThreeElements } from '@react-three/fiber'
 import { easing } from 'maath'
@@ -36,6 +36,11 @@ export const FLOAT_SPEED = 0.6 // rad/s of the float sine
 export const PARALLAX_STRENGTH = 0.12 // pointer nudge on idle tilt
 export const SETTLE_SMOOTH_TIME = 0.3 // ease parallax/float back when parked
 
+/** Invisible sphere around the whole sculpture — entering it shows the planet
+ *  name labels; leaving hides them after LABEL_LINGER_MS. */
+export const HOVER_ZONE_RADIUS = 4.6
+export const LABEL_LINGER_MS = 1500
+
 function prefersReducedMotion(): boolean {
   return (
     typeof window !== 'undefined' &&
@@ -54,6 +59,22 @@ export default function Rig(props: ThreeElements['group']) {
   const reduced = useRef<boolean>(prefersReducedMotion())
   // Line-art inverts with the theme: bright (glows) on the black hero, dark on white.
   const bodyColor = useApp((s) => (themeForView(s.view) === 'dark' ? '#f2f2f2' : '#141414'))
+
+  // Planet name labels: shown while the cursor is anywhere over the sculpture
+  // (cube + loop), hidden LABEL_LINGER_MS after it leaves.
+  const [labelsVisible, setLabelsVisible] = useState(false)
+  const labelTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const showLabels = () => {
+    if (labelTimer.current) clearTimeout(labelTimer.current)
+    setLabelsVisible(true)
+  }
+  const hideLabelsDelayed = () => {
+    if (labelTimer.current) clearTimeout(labelTimer.current)
+    labelTimer.current = setTimeout(() => setLabelsVisible(false), LABEL_LINGER_MS)
+  }
+  useEffect(() => () => {
+    if (labelTimer.current) clearTimeout(labelTimer.current)
+  }, [])
 
   useFrame((state, delta) => {
     const dt = Math.min(delta, 1 / 30) // clamp big gaps (tab refocus)
@@ -113,6 +134,13 @@ export default function Rig(props: ThreeElements['group']) {
 
   return (
     <group ref={rig} scale={RIG_SCALE} {...props}>
+      {/* Invisible hover zone around the whole sculpture — drives the labels.
+          No stopPropagation, so planet/cube events still fire through it. */}
+      <mesh onPointerOver={showLabels} onPointerOut={hideLabelsDelayed}>
+        <sphereGeometry args={[HOVER_ZONE_RADIUS, 16, 16]} />
+        <meshBasicMaterial transparent opacity={0} depthWrite={false} />
+      </mesh>
+
       <group ref={cube}>
         <Cube color={bodyColor} />
       </group>
@@ -125,7 +153,12 @@ export default function Rig(props: ThreeElements['group']) {
               planetRefs.current[i] = el
             }}
           >
-            <Planet index={i} color={bodyColor} reduced={reduced.current} />
+            <Planet
+              index={i}
+              color={bodyColor}
+              reduced={reduced.current}
+              labelVisible={labelsVisible}
+            />
           </group>
         ))}
       </group>
