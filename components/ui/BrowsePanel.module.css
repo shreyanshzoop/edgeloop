@@ -28,11 +28,21 @@
   flex-direction: row-reverse;
 }
 
-/* Declared after .left/.right so it wins when the panel is open. */
+/* Declared after .left/.right so it wins when the panel is open.
+   NOTE: the panel CONTAINER never catches pointer events — its empty space must
+   let clicks through to the 3D planets behind it (no dead zones). Only the
+   actual content (rail + stage children) is interactive, below. */
 .open {
   opacity: 1;
-  pointer-events: auto;
   transform: translateX(0);
+}
+
+.stage {
+  pointer-events: none;
+}
+.open .rail,
+.open .stage > * {
+  pointer-events: auto;
 }
 
 /* ---- rail: discipline nav + project list ---- */
@@ -286,6 +296,11 @@
     padding: 4.5rem 6vw calc(5rem + env(safe-area-inset-bottom));
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+  }
+  /* mobile panel is a solid full-screen surface — it must scroll, so it
+     catches pointer events again (nothing visible behind it anyway) */
+  .open {
+    pointer-events: auto;
   }
   .left,
   .right {
