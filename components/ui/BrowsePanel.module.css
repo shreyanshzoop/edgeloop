@@ -205,6 +205,37 @@
 .prompt {
   color: var(--fg-dim);
 }
+
+/* no-media placeholder: spinning dotted ring + "loading..." below */
+.loaderWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  color: var(--fg-dim);
+}
+.loader {
+  width: 30px;
+  height: 30px;
+  border: 2px dotted currentColor;
+  border-radius: 50%;
+  animation: loaderSpin 1.6s linear infinite;
+}
+.loaderText {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+}
+@keyframes loaderSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .loader {
+    animation: none;
+  }
+}
 .about {
   max-width: 34rem;
   line-height: 1.75;

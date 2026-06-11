@@ -24,7 +24,13 @@ function youtubeId(url: string): string | null {
 
 function Preview({ project }: { project: Project }) {
   if (project.images.length === 0) {
-    return <p className={styles.prompt}>{project.name}</p>
+    // No media yet for this project — show a loading state instead of a blank.
+    return (
+      <div className={styles.loaderWrap} role="status" aria-label={`${project.name} — media coming soon`}>
+        <span className={styles.loader} aria-hidden />
+        <span className={styles.loaderText}>loading...</span>
+      </div>
+    )
   }
   return (
     <div className={styles.previewGrid} data-layout={project.layout}>
