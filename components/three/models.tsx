@@ -153,14 +153,27 @@ interface PlanetProps extends ModelProps {
   reduced?: boolean
 }
 
+/** Forgiving hit area: invisible sphere around each planet so clicks land even
+ *  10–20px outside the visible cube (or when the spin carries it past the cursor).
+ *  Planets are ~0.4 units; this radius adds a generous halo at current framing. */
+export const PLANET_HIT_RADIUS = 0.55
+
 /** PLANET — a bright node on the ring. Click → its discipline (slides toward the
- *  side the star is on); hover lights it brand-blue. */
+ *  side the star is on); hover lights it brand-blue. Events live on the group so
+ *  both the planet mesh and its invisible hit halo trigger them. */
 export function Planet({ index, color = LINE_COLOR, reduced = false, ...props }: PlanetProps) {
   const { root, materials } = useFlatClone(MODEL_PATHS.planets[index], color)
   const camera = useThree((s) => s.camera)
   const hovered = useRef(false)
   const base = useMemo(() => new THREE.Color(color), [color])
   const hover = useMemo(() => new THREE.Color(HOVER_ACCENT), [])
+
+  // The planet's position is baked into the GLB mesh — find its center once so
+  // the hit halo can sit exactly on it.
+  const center = useMemo(
+    () => new THREE.Box3().setFromObject(root).getCenter(new THREE.Vector3()),
+    [root],
+  )
 
   useFrame((_, dt) => {
     const t = hovered.current ? hover : base
@@ -173,20 +186,25 @@ export function Planet({ index, color = LINE_COLOR, reduced = false, ...props }:
   }
 
   return (
-    <group {...props}>
-      <primitive
-        object={root}
-        onClick={(e: ThreeEvent<MouseEvent>) => {
-          e.stopPropagation()
-          const ndcX = e.point.clone().project(camera).x
-          useApp.getState().selectCategory(CATEGORY_IDS[index], ndcX < 0 ? 'left' : 'right')
-        }}
-        onPointerOver={(e: ThreeEvent<PointerEvent>) => {
-          e.stopPropagation()
-          setHover(true)
-        }}
-        onPointerOut={() => setHover(false)}
-      />
+    <group
+      {...props}
+      onClick={(e: ThreeEvent<MouseEvent>) => {
+        e.stopPropagation()
+        const ndcX = e.point.clone().project(camera).x
+        useApp.getState().selectCategory(CATEGORY_IDS[index], ndcX < 0 ? 'left' : 'right')
+      }}
+      onPointerOver={(e: ThreeEvent<PointerEvent>) => {
+        e.stopPropagation()
+        setHover(true)
+      }}
+      onPointerOut={() => setHover(false)}
+    >
+      <primitive object={root} />
+      {/* invisible, raycastable hit halo */}
+      <mesh position={center}>
+        <sphereGeometry args={[PLANET_HIT_RADIUS, 12, 12]} />
+        <meshBasicMaterial transparent opacity={0} depthWrite={false} />
+      </mesh>
     </group>
   )
 }
