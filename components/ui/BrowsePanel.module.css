@@ -256,6 +256,13 @@
 .previewGrid[data-layout='stack'] {
   grid-template-columns: 1fr;
 }
+
+/* per-project size boost: Aditya Birla Analyst Day reads bigger, still capped
+   so the 2x2 grid fits the stage without scrolling */
+.previewGrid[data-project='aditya-birla-analyst-day'] {
+  max-width: min(58rem, 100%, 165vh);
+  gap: 1rem;
+}
 .previewImg {
   width: 100%;
   height: auto;
