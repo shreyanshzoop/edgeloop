@@ -264,7 +264,7 @@
 /* oversized hero previews: allowed to break out of the stage width */
 .previewGrid[data-project='aditya-birla-analyst-day'],
 .previewGrid[data-project='excon-billboard'] {
-  width: min(110rem, 140vh);
+  width: min(90rem, 140vh);
   max-width: none;
   flex-shrink: 0;
   gap: 1.1rem;
