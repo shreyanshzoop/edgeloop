@@ -272,60 +272,42 @@
   max-width: 23.4rem;
 }
 
-/* NSM's three stacked panoramas: fully fused — flex column with negative
-   margins so they pull together past any transparent padding in the PNGs.
-   Slightly larger than default, and nudged toward the loop so the stack sits
-   centered in the open space between the project list and the object. */
-.previewGrid[data-project='nsm-launch-event'] {
+/* ============ anamorphics: ONE consistent bounding box ============
+   Every anamorphics preview renders inside the same region (~48vw × 76vh,
+   matched to the cube's on-screen bounds) and is centered within it.
+   Images scale to fit — nothing escapes the box. */
+.previewGrid[data-category='anamorphics'] {
+  width: 48vw;
+  height: 76vh;
+  max-width: none;
+  align-content: center;
+  justify-content: center;
+  gap: 0.75rem;
+  overflow: hidden;
+}
+.previewGrid[data-category='anamorphics'] .previewImg {
+  width: auto;
+  max-width: 100%;
+  max-height: 35vh; /* 2x2 grids: two rows fit the box */
+  margin-inline: auto;
+  object-fit: contain;
+}
+/* stacked layouts (NSM / TATA / HDFC): flex column, three rows fit the box */
+.previewGrid[data-category='anamorphics'][data-layout='stack'] {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.previewGrid[data-category='anamorphics'][data-layout='stack'] .previewImg {
+  max-height: 24vh;
+}
+/* NSM stays fused: zero gap + overlap past the PNGs' transparent padding */
+.previewGrid[data-project='nsm-launch-event'] {
   gap: 0;
-  max-width: 47rem;
-}
-.left .previewGrid[data-project='nsm-launch-event'] {
-  transform: translateX(4rem); /* panel left → loop on the right */
-}
-.right .previewGrid[data-project='nsm-launch-event'] {
-  transform: translateX(-4rem); /* panel right → loop on the left */
 }
 .previewGrid[data-project='nsm-launch-event'] .previewImg + .previewImg {
   margin-top: -1.5rem;
-}
-
-/* Mindgate: bigger 2x2, exact image size, tight, centered */
-.previewGrid[data-project='mindgate'] {
-  width: auto;
-  max-width: none;
-  justify-content: center;
-  gap: 0.25rem;
-  grid-template-columns: repeat(2, 516px);
-}
-
-/* HDFC's stacked banners render wider than the default cap */
-.previewGrid[data-project='hdfc-annual-sparsh'] {
-  max-width: 56rem;
-}
-
-/* hero previews: exact per-image sizes (2x2 grid, centered on the stage) */
-.previewGrid[data-project='aditya-birla-analyst-day'],
-.previewGrid[data-project='excon-billboard'] {
-  width: auto;
-  max-width: none;
-  justify-content: center;
-  gap: 1rem;
-}
-.previewGrid[data-project='aditya-birla-analyst-day'] {
-  grid-template-columns: repeat(2, 397px);
-}
-/* nudge Aditya Birla toward the parked loop (which sits opposite the panel) */
-.left .previewGrid[data-project='aditya-birla-analyst-day'] {
-  transform: translateX(3rem); /* panel left → loop on the right */
-}
-.right .previewGrid[data-project='aditya-birla-analyst-day'] {
-  transform: translateX(-3rem); /* panel right → loop on the left */
-}
-.previewGrid[data-project='excon-billboard'] {
-  grid-template-columns: repeat(2, 384px);
 }
 .previewImg {
   width: 100%;
