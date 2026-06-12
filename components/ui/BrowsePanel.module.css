@@ -302,10 +302,14 @@
 .previewGrid[data-category='anamorphics'][data-layout='stack'] .previewImg {
   max-height: 24vh;
 }
-/* NSM stays fused (sources are now trimmed to true content, so a hairline
-   gap is enough — no overlap hacks needed) */
+/* NSM: per the design guides — three panoramas ~33vw wide, spread evenly
+   down the box with generous breathing room, centered as a group */
 .previewGrid[data-project='nsm-launch-event'] {
-  gap: 3px;
+  gap: 5.5vh;
+}
+.previewGrid[data-project='nsm-launch-event'] .previewImg {
+  width: 33vw;
+  max-height: none;
 }
 .previewImg {
   width: 100%;
