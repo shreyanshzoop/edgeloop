@@ -308,7 +308,7 @@
   gap: 5.5vh;
 }
 .previewGrid[data-project='nsm-launch-event'] .previewImg {
-  width: 33vw;
+  width: calc(33vw + 10px);
   max-height: none;
 }
 .previewImg {
