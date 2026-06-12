@@ -267,6 +267,11 @@
 
 /* per-project size boost: Aditya Birla + Excon read bigger, still capped
    so the 2x2 grids fit the stage without scrolling */
+/* brands: single hero shots render smaller than the default cap */
+.previewGrid[data-category='brands'] {
+  max-width: 32rem;
+}
+
 /* NSM's three stacked panoramas: fully fused — flex column with negative
    margins so they pull together past any transparent padding in the PNGs */
 .previewGrid[data-project='nsm-launch-event'] {

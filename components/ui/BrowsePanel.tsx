@@ -33,7 +33,12 @@ function Preview({ project }: { project: Project }) {
     )
   }
   return (
-    <div className={styles.previewGrid} data-layout={project.layout} data-project={project.slug}>
+    <div
+      className={styles.previewGrid}
+      data-layout={project.layout}
+      data-project={project.slug}
+      data-category={project.category}
+    >
       {project.images.map((img) => (
         <Image
           key={img.src}
