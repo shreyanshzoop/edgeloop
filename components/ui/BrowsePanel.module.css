@@ -218,7 +218,7 @@
   bottom: -3rem; /* …and bottom */
   left: 50%;
   transform: translateX(-50%);
-  width: 52vw;
+  width: calc(52vw - 40px); /* 20px trimmed from each side */
   z-index: -1;
   pointer-events: none;
   background: linear-gradient(
