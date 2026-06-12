@@ -267,13 +267,13 @@
 
 /* per-project size boost: Aditya Birla + Excon read bigger, still capped
    so the 2x2 grids fit the stage without scrolling */
-/* oversized hero previews: allowed to break out of the stage width */
+/* hero previews: larger than default, but CONTAINED — they fill the stage
+   between the project list and the object's side without overlapping either */
 .previewGrid[data-project='aditya-birla-analyst-day'],
 .previewGrid[data-project='excon-billboard'] {
-  width: min(90rem, 140vh);
-  max-width: none;
-  flex-shrink: 0;
-  gap: 1.1rem;
+  width: 100%;
+  max-width: min(64rem, 100%, 130vh);
+  gap: 1rem;
 }
 .previewImg {
   width: 100%;
