@@ -269,7 +269,7 @@
    so the 2x2 grids fit the stage without scrolling */
 /* brands: single hero shots render smaller than the default cap */
 .previewGrid[data-category='brands'] {
-  max-width: 32rem;
+  max-width: 26rem;
 }
 
 /* NSM's three stacked panoramas: fully fused — flex column with negative
