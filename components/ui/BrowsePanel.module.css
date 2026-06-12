@@ -44,6 +44,12 @@
 .open .stage > * {
   pointer-events: auto;
 }
+/* EXCEPTION (must out-rank the rule above): the hover preview is display-only.
+   If it caught the pointer, a grid overlapping the list would steal the hover,
+   unmount itself, restore the hover, remount — an infinite flicker loop. */
+.open .stage > .previewGrid {
+  pointer-events: none;
+}
 
 /* ---- rail: discipline nav + project list ---- */
 .rail {
