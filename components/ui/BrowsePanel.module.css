@@ -278,13 +278,13 @@
   margin-top: -1.5rem;
 }
 
-/* Mindgate: bigger 2x2, exact image size, centered */
+/* Mindgate: bigger 2x2, exact image size, tight, centered */
 .previewGrid[data-project='mindgate'] {
   width: auto;
   max-width: none;
   justify-content: center;
-  gap: 1rem;
-  grid-template-columns: repeat(2, 430px);
+  gap: 0.25rem;
+  grid-template-columns: repeat(2, 516px);
 }
 
 /* HDFC's stacked banners render wider than the default cap */
