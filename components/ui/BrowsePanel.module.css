@@ -278,6 +278,13 @@
 .previewGrid[data-project='aditya-birla-analyst-day'] {
   grid-template-columns: repeat(2, 397px);
 }
+/* nudge Aditya Birla toward the parked loop (which sits opposite the panel) */
+.left .previewGrid[data-project='aditya-birla-analyst-day'] {
+  transform: translateX(3rem); /* panel left → loop on the right */
+}
+.right .previewGrid[data-project='aditya-birla-analyst-day'] {
+  transform: translateX(-3rem); /* panel right → loop on the left */
+}
 .previewGrid[data-project='excon-billboard'] {
   grid-template-columns: repeat(2, 384px);
 }
