@@ -276,10 +276,10 @@
   gap: 1rem;
 }
 .previewGrid[data-project='aditya-birla-analyst-day'] {
-  grid-template-columns: repeat(2, 630px);
+  grid-template-columns: repeat(2, 441px);
 }
 .previewGrid[data-project='excon-billboard'] {
-  grid-template-columns: repeat(2, 610px);
+  grid-template-columns: repeat(2, 427px);
 }
 .previewImg {
   width: 100%;
