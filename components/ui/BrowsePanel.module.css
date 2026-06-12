@@ -220,6 +220,13 @@
   transform: translateX(-50%);
   width: calc(52vw - 40px); /* 20px trimmed from each side */
   z-index: -1;
+}
+/* band leans toward the parked loop (which sits opposite the panel) */
+.left .stageBand {
+  left: calc(50% + 4rem); /* panel left → loop on the right */
+}
+.right .stageBand {
+  left: calc(50% - 4rem); /* panel right → loop on the left */
   pointer-events: none;
   background: linear-gradient(
     to right,
