@@ -221,29 +221,29 @@ export const site: SiteContent = {
             {
               "src": "/media/anamorphics/mindgate/0.png",
               "alt": "Mindgate — Anamorphics (1)",
-              "width": 1000,
-              "height": 476,
+              "width": 996,
+              "height": 472,
               "transparent": true
             },
             {
               "src": "/media/anamorphics/mindgate/1.png",
               "alt": "Mindgate — Anamorphics (2)",
-              "width": 1000,
-              "height": 476,
+              "width": 996,
+              "height": 472,
               "transparent": true
             },
             {
               "src": "/media/anamorphics/mindgate/2.png",
               "alt": "Mindgate — Anamorphics (3)",
-              "width": 1000,
-              "height": 476,
+              "width": 996,
+              "height": 472,
               "transparent": true
             },
             {
               "src": "/media/anamorphics/mindgate/3.png",
               "alt": "Mindgate — Anamorphics (4)",
-              "width": 1000,
-              "height": 476,
+              "width": 996,
+              "height": 472,
               "transparent": true
             }
           ],
