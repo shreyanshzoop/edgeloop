@@ -202,11 +202,32 @@
 
 /* ---- stage: preview / detail / about ---- */
 .stage {
+  position: relative;
   flex: 1 1 auto;
   min-width: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* persistent black band (artists / dj sets): full viewport height, fading to
+   the page at its left and right edges. Sits behind the stage content. */
+.stageBand {
+  position: absolute;
+  top: -5.5rem; /* cancel the panel's padding → reach the viewport top */
+  bottom: -3rem; /* …and bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 52vw;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    rgba(10, 10, 10, 0),
+    #0a0a0a 16%,
+    #0a0a0a 84%,
+    rgba(10, 10, 10, 0)
+  );
 }
 .prompt {
   color: var(--fg-dim);
@@ -272,26 +293,18 @@
   max-width: 23.4rem;
 }
 
-/* artists + dj sets: previews live inside a black band that fades out to the
-   page on its left and right edges (black → grey → white) */
+/* artists + dj sets: previews sit on the persistent black band (stageBand);
+   horizontal padding keeps images inside the solid-black middle of the fade */
 .previewGrid[data-category='artists'],
 .previewGrid[data-category='djsets'],
 .loaderWrap[data-category='artists'],
 .loaderWrap[data-category='djsets'] {
   width: 52vw;
   max-width: none;
-  min-height: 44vh;
-  padding: 5vh 6vw;
+  padding: 0 6vw;
   box-sizing: border-box;
   align-content: center;
   justify-content: center;
-  background: linear-gradient(
-    to right,
-    rgba(10, 10, 10, 0),
-    #0a0a0a 16%,
-    #0a0a0a 84%,
-    rgba(10, 10, 10, 0)
-  );
 }
 /* loader text/ring read light on the black band */
 .loaderWrap[data-category='artists'],
