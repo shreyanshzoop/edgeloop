@@ -302,12 +302,10 @@
 .previewGrid[data-category='anamorphics'][data-layout='stack'] .previewImg {
   max-height: 24vh;
 }
-/* NSM stays fused: zero gap + overlap past the PNGs' transparent padding */
+/* NSM stays fused (sources are now trimmed to true content, so a hairline
+   gap is enough — no overlap hacks needed) */
 .previewGrid[data-project='nsm-launch-event'] {
-  gap: 0;
-}
-.previewGrid[data-project='nsm-launch-event'] .previewImg + .previewImg {
-  margin-top: -1.5rem;
+  gap: 3px;
 }
 .previewImg {
   width: 100%;

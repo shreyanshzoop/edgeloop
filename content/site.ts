@@ -27,22 +27,22 @@ export const site: SiteContent = {
             {
               "src": "/media/anamorphics/nsm-launch-event/0.png",
               "alt": "NSM Launch Event — Anamorphics (1)",
-              "width": 1100,
-              "height": 502,
+              "width": 1083,
+              "height": 290,
               "transparent": true
             },
             {
               "src": "/media/anamorphics/nsm-launch-event/1.png",
               "alt": "NSM Launch Event — Anamorphics (2)",
-              "width": 1100,
-              "height": 502,
+              "width": 1059,
+              "height": 289,
               "transparent": true
             },
             {
               "src": "/media/anamorphics/nsm-launch-event/2.png",
               "alt": "NSM Launch Event — Anamorphics (3)",
-              "width": 1100,
-              "height": 502,
+              "width": 1068,
+              "height": 261,
               "transparent": true
             }
           ],
@@ -63,29 +63,29 @@ export const site: SiteContent = {
             {
               "src": "/media/anamorphics/excon-billboard/0.png",
               "alt": "Excon Billboard — Anamorphics (1)",
-              "width": 1000,
-              "height": 562,
+              "width": 929,
+              "height": 500,
               "transparent": true
             },
             {
               "src": "/media/anamorphics/excon-billboard/1.png",
               "alt": "Excon Billboard — Anamorphics (2)",
-              "width": 1000,
-              "height": 562,
+              "width": 930,
+              "height": 500,
               "transparent": true
             },
             {
               "src": "/media/anamorphics/excon-billboard/2.png",
               "alt": "Excon Billboard — Anamorphics (3)",
-              "width": 1000,
-              "height": 562,
+              "width": 929,
+              "height": 500,
               "transparent": true
             },
             {
               "src": "/media/anamorphics/excon-billboard/3.png",
               "alt": "Excon Billboard — Anamorphics (4)",
-              "width": 1000,
-              "height": 562,
+              "width": 929,
+              "height": 500,
               "transparent": true
             }
           ],
@@ -185,22 +185,22 @@ export const site: SiteContent = {
             {
               "src": "/media/anamorphics/hdfc-annual-sparsh/0.png",
               "alt": "HDFC Annual Sparsh — Anamorphics (1)",
-              "width": 1100,
-              "height": 275,
+              "width": 739,
+              "height": 262,
               "transparent": true
             },
             {
               "src": "/media/anamorphics/hdfc-annual-sparsh/1.png",
               "alt": "HDFC Annual Sparsh — Anamorphics (2)",
-              "width": 1100,
-              "height": 275,
+              "width": 739,
+              "height": 262,
               "transparent": true
             },
             {
               "src": "/media/anamorphics/hdfc-annual-sparsh/2.png",
               "alt": "HDFC Annual Sparsh — Anamorphics (3)",
-              "width": 1100,
-              "height": 275,
+              "width": 739,
+              "height": 262,
               "transparent": true
             }
           ],
@@ -221,29 +221,29 @@ export const site: SiteContent = {
             {
               "src": "/media/anamorphics/mindgate/0.png",
               "alt": "Mindgate — Anamorphics (1)",
-              "width": 996,
-              "height": 472,
+              "width": 449,
+              "height": 389,
               "transparent": true
             },
             {
               "src": "/media/anamorphics/mindgate/1.png",
               "alt": "Mindgate — Anamorphics (2)",
-              "width": 996,
-              "height": 472,
+              "width": 449,
+              "height": 389,
               "transparent": true
             },
             {
               "src": "/media/anamorphics/mindgate/2.png",
               "alt": "Mindgate — Anamorphics (3)",
-              "width": 996,
-              "height": 472,
+              "width": 448,
+              "height": 388,
               "transparent": true
             },
             {
               "src": "/media/anamorphics/mindgate/3.png",
               "alt": "Mindgate — Anamorphics (4)",
-              "width": 996,
-              "height": 472,
+              "width": 449,
+              "height": 389,
               "transparent": true
             }
           ],

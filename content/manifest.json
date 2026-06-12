@@ -7,20 +7,20 @@
     "images": [
       {
         "src": "/media/anamorphics/nsm-launch-event/0.png",
-        "width": 1100,
-        "height": 502,
+        "width": 1083,
+        "height": 290,
         "transparent": true
       },
       {
         "src": "/media/anamorphics/nsm-launch-event/1.png",
-        "width": 1100,
-        "height": 502,
+        "width": 1059,
+        "height": 289,
         "transparent": true
       },
       {
         "src": "/media/anamorphics/nsm-launch-event/2.png",
-        "width": 1100,
-        "height": 502,
+        "width": 1068,
+        "height": 261,
         "transparent": true
       }
     ],
@@ -33,26 +33,26 @@
     "images": [
       {
         "src": "/media/anamorphics/excon-billboard/0.png",
-        "width": 1000,
-        "height": 562,
+        "width": 929,
+        "height": 500,
         "transparent": true
       },
       {
         "src": "/media/anamorphics/excon-billboard/1.png",
-        "width": 1000,
-        "height": 562,
+        "width": 930,
+        "height": 500,
         "transparent": true
       },
       {
         "src": "/media/anamorphics/excon-billboard/2.png",
-        "width": 1000,
-        "height": 562,
+        "width": 929,
+        "height": 500,
         "transparent": true
       },
       {
         "src": "/media/anamorphics/excon-billboard/3.png",
-        "width": 1000,
-        "height": 562,
+        "width": 929,
+        "height": 500,
         "transparent": true
       }
     ],
@@ -124,20 +124,20 @@
     "images": [
       {
         "src": "/media/anamorphics/hdfc-annual-sparsh/0.png",
-        "width": 1100,
-        "height": 275,
+        "width": 739,
+        "height": 262,
         "transparent": true
       },
       {
         "src": "/media/anamorphics/hdfc-annual-sparsh/1.png",
-        "width": 1100,
-        "height": 275,
+        "width": 739,
+        "height": 262,
         "transparent": true
       },
       {
         "src": "/media/anamorphics/hdfc-annual-sparsh/2.png",
-        "width": 1100,
-        "height": 275,
+        "width": 739,
+        "height": 262,
         "transparent": true
       }
     ],
@@ -150,26 +150,26 @@
     "images": [
       {
         "src": "/media/anamorphics/mindgate/0.png",
-        "width": 996,
-        "height": 472,
+        "width": 449,
+        "height": 389,
         "transparent": true
       },
       {
         "src": "/media/anamorphics/mindgate/1.png",
-        "width": 996,
-        "height": 472,
+        "width": 449,
+        "height": 389,
         "transparent": true
       },
       {
         "src": "/media/anamorphics/mindgate/2.png",
-        "width": 996,
-        "height": 472,
+        "width": 448,
+        "height": 388,
         "transparent": true
       },
       {
         "src": "/media/anamorphics/mindgate/3.png",
-        "width": 996,
-        "height": 472,
+        "width": 449,
+        "height": 389,
         "transparent": true
       }
     ],
