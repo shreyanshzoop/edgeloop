@@ -224,8 +224,8 @@
   background: linear-gradient(
     to right,
     rgba(10, 10, 10, 0),
-    #0a0a0a 16%,
-    #0a0a0a 84%,
+    #0a0a0a 3.2%,
+    #0a0a0a 96.8%,
     rgba(10, 10, 10, 0)
   );
 }
