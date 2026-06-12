@@ -267,9 +267,23 @@
 
 /* per-project size boost: Aditya Birla + Excon read bigger, still capped
    so the 2x2 grids fit the stage without scrolling */
-/* NSM's three stacked panoramas sit tighter together */
+/* NSM's three stacked panoramas sit nearly fused */
 .previewGrid[data-project='nsm-launch-event'] {
-  gap: 0.25rem;
+  gap: 2px;
+}
+
+/* Mindgate: bigger 2x2, exact image size, centered */
+.previewGrid[data-project='mindgate'] {
+  width: auto;
+  max-width: none;
+  justify-content: center;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 430px);
+}
+
+/* HDFC's stacked banners render wider than the default cap */
+.previewGrid[data-project='hdfc-annual-sparsh'] {
+  max-width: 56rem;
 }
 
 /* hero previews: exact per-image sizes (2x2 grid, centered on the stage) */
