@@ -267,9 +267,15 @@
 
 /* per-project size boost: Aditya Birla + Excon read bigger, still capped
    so the 2x2 grids fit the stage without scrolling */
-/* NSM's three stacked panoramas sit nearly fused */
+/* NSM's three stacked panoramas: fully fused — flex column with negative
+   margins so they pull together past any transparent padding in the PNGs */
 .previewGrid[data-project='nsm-launch-event'] {
-  gap: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.previewGrid[data-project='nsm-launch-event'] .previewImg + .previewImg {
+  margin-top: -1.5rem;
 }
 
 /* Mindgate: bigger 2x2, exact image size, centered */
