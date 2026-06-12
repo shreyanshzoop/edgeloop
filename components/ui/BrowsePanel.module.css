@@ -302,12 +302,14 @@
 .previewGrid[data-category='anamorphics'][data-layout='stack'] .previewImg {
   max-height: 24vh;
 }
-/* NSM: per the design guides — three panoramas ~33vw wide, spread evenly
-   down the box with generous breathing room, centered as a group */
-.previewGrid[data-project='nsm-launch-event'] {
+/* NSM + HDFC: per the design guides — three panoramas ~33vw wide, spread
+   evenly down the box with generous breathing room, centered as a group */
+.previewGrid[data-project='nsm-launch-event'],
+.previewGrid[data-project='hdfc-annual-sparsh'] {
   gap: 5.5vh;
 }
-.previewGrid[data-project='nsm-launch-event'] .previewImg {
+.previewGrid[data-project='nsm-launch-event'] .previewImg,
+.previewGrid[data-project='hdfc-annual-sparsh'] .previewImg {
   width: calc(33vw + 10px);
   max-height: none;
 }
