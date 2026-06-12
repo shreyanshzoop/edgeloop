@@ -273,11 +273,20 @@
 }
 
 /* NSM's three stacked panoramas: fully fused — flex column with negative
-   margins so they pull together past any transparent padding in the PNGs */
+   margins so they pull together past any transparent padding in the PNGs.
+   Slightly larger than default, and nudged toward the loop so the stack sits
+   centered in the open space between the project list and the object. */
 .previewGrid[data-project='nsm-launch-event'] {
   display: flex;
   flex-direction: column;
   gap: 0;
+  max-width: 47rem;
+}
+.left .previewGrid[data-project='nsm-launch-event'] {
+  transform: translateX(4rem); /* panel left → loop on the right */
+}
+.right .previewGrid[data-project='nsm-launch-event'] {
+  transform: translateX(-4rem); /* panel right → loop on the left */
 }
 .previewGrid[data-project='nsm-launch-event'] .previewImg + .previewImg {
   margin-top: -1.5rem;
