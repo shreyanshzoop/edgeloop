@@ -315,6 +315,10 @@
   width: calc(33vw + 10px);
   max-height: none;
 }
+/* NSM runs 20px wider than the shared guide width */
+.previewGrid[data-project='nsm-launch-event'] .previewImg {
+  width: calc(33vw + 30px);
+}
 .previewImg {
   width: 100%;
   height: auto;
