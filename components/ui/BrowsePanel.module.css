@@ -272,6 +272,33 @@
   max-width: 23.4rem;
 }
 
+/* artists + dj sets: previews live inside a black band that fades out to the
+   page on its left and right edges (black → grey → white) */
+.previewGrid[data-category='artists'],
+.previewGrid[data-category='djsets'],
+.loaderWrap[data-category='artists'],
+.loaderWrap[data-category='djsets'] {
+  width: 52vw;
+  max-width: none;
+  min-height: 44vh;
+  padding: 5vh 6vw;
+  box-sizing: border-box;
+  align-content: center;
+  justify-content: center;
+  background: linear-gradient(
+    to right,
+    rgba(10, 10, 10, 0),
+    #0a0a0a 16%,
+    #0a0a0a 84%,
+    rgba(10, 10, 10, 0)
+  );
+}
+/* loader text/ring read light on the black band */
+.loaderWrap[data-category='artists'],
+.loaderWrap[data-category='djsets'] {
+  color: #999;
+}
+
 /* ============ anamorphics: ONE consistent bounding box ============
    Every anamorphics preview renders inside the same region (~48vw × 76vh,
    matched to the cube's on-screen bounds) and is centered within it.

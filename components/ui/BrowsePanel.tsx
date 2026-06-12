@@ -26,7 +26,12 @@ function Preview({ project }: { project: Project }) {
   if (project.images.length === 0) {
     // No media yet for this project — show a loading state instead of a blank.
     return (
-      <div className={styles.loaderWrap} role="status" aria-label={`${project.name} — media coming soon`}>
+      <div
+        className={styles.loaderWrap}
+        data-category={project.category}
+        role="status"
+        aria-label={`${project.name} — media coming soon`}
+      >
         <span className={styles.loader} aria-hidden />
         <span className={styles.loaderText}>loading...</span>
       </div>
