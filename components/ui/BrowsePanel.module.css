@@ -257,10 +257,11 @@
   grid-template-columns: 1fr;
 }
 
-/* per-project size boost: Aditya Birla Analyst Day reads bigger, still capped
-   so the 2x2 grid fits the stage without scrolling */
-.previewGrid[data-project='aditya-birla-analyst-day'] {
-  max-width: min(72rem, 100%, 140vh);
+/* per-project size boost: Aditya Birla + Excon read bigger, still capped
+   so the 2x2 grids fit the stage without scrolling */
+.previewGrid[data-project='aditya-birla-analyst-day'],
+.previewGrid[data-project='excon-billboard'] {
+  max-width: min(86rem, 100%, 140vh);
   gap: 1.1rem;
 }
 .previewImg {
