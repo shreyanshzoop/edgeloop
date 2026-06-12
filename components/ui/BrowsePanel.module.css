@@ -340,6 +340,10 @@
   gap: 1rem;
   width: 100%;
   max-width: 42rem;
+  /* anchor to the top of the stage so "← back" sits level with the SECOND
+     project row in the rail (title 1.2rem + rail gap 1.6rem + first row ~1.7rem) */
+  align-self: flex-start;
+  margin-top: 4.5rem;
 }
 .back {
   align-self: flex-start;
@@ -445,6 +449,7 @@
   }
   .detail {
     max-width: none;
+    margin-top: 0; /* mobile panel scrolls; no rail alignment to match */
   }
   .detailImages {
     display: grid;
