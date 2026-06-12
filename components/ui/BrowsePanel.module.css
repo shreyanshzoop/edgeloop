@@ -251,6 +251,8 @@
   gap: 0.75rem;
   width: 100%;
   max-width: 44rem;
+  /* display-only: never intercept hovers/clicks (lists, planets) underneath */
+  pointer-events: none;
 }
 .previewGrid[data-layout='single'],
 .previewGrid[data-layout='stack'] {
@@ -259,9 +261,12 @@
 
 /* per-project size boost: Aditya Birla + Excon read bigger, still capped
    so the 2x2 grids fit the stage without scrolling */
+/* oversized hero previews: allowed to break out of the stage width */
 .previewGrid[data-project='aditya-birla-analyst-day'],
 .previewGrid[data-project='excon-billboard'] {
-  max-width: min(100rem, 100%, 140vh);
+  width: min(130rem, 140vh);
+  max-width: none;
+  flex-shrink: 0;
   gap: 1.1rem;
 }
 .previewImg {
