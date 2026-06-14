@@ -209,6 +209,16 @@
   align-items: center;
   justify-content: center;
 }
+/* all stage content (preview, loader, prompt, detail, about) layers ABOVE the
+   persistent black band — explicit z so there's no negative-z fragility */
+.stage > .previewGrid,
+.stage > .loaderWrap,
+.stage > .prompt,
+.stage > .detail,
+.stage > .about {
+  position: relative;
+  z-index: 1;
+}
 
 /* persistent black band (artists / dj sets): full viewport height, fading to
    the page at its left and right edges. Sits behind the stage content. */
@@ -219,7 +229,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: calc(52vw - 40px); /* 20px trimmed from each side */
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
   background: linear-gradient(
     to right,
@@ -489,6 +499,9 @@
   .stage {
     align-items: stretch;
     justify-content: flex-start;
+  }
+  .stageBand {
+    display: none; /* mobile panel is a solid surface; no band */
   }
   .about {
     margin: 0;
