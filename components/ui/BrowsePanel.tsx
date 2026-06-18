@@ -10,6 +10,7 @@
  * and the generated content; it is the semantic, crawlable layer behind the canvas.
  */
 
+import { useRef } from 'react'
 import Image from 'next/image'
 import { site } from '@/content/site'
 import { useApp, CATEGORY_IDS, CATEGORY_LABELS } from '@/lib/store'
@@ -127,6 +128,18 @@ export default function BrowsePanel() {
     selectCategory(CATEGORY_IDS[((i + delta) % n + n) % n], side)
   }
 
+  // Trackpad/mouse scroll over the switcher cycles sections — one step per
+  // gesture (cooldown), horizontal swipe (deltaX) or wheel (deltaY).
+  const wheelAt = useRef(0)
+  const onSwitcherWheel = (e: React.WheelEvent) => {
+    const d = Math.abs(e.deltaX) >= Math.abs(e.deltaY) ? e.deltaX : e.deltaY
+    if (Math.abs(d) < 1 || !activeCategory) return
+    const now = Date.now()
+    if (now - wheelAt.current < 350) return
+    wheelAt.current = now
+    cycle(d > 0 ? 1 : -1)
+  }
+
   // Neighboring sections peek in, faded, on either side of the switcher:
   //   …morphic ‹ brands › dj se…
   const catIndex = activeCategory ? CATEGORY_IDS.indexOf(activeCategory) : -1
@@ -148,7 +161,7 @@ export default function BrowsePanel() {
         {aboutOpen ? (
           <h2 className={styles.railTitle}>about</h2>
         ) : category ? (
-          <div className={styles.switcher}>
+          <div className={styles.switcher} onWheel={onSwitcherWheel}>
             <button
               key={`p-${category.id}`}
               className={styles.ghostPrev}
