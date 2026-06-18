@@ -10,7 +10,7 @@
  * and the generated content; it is the semantic, crawlable layer behind the canvas.
  */
 
-import { useRef } from 'react'
+import { useCallback, useRef } from 'react'
 import Image from 'next/image'
 import { site } from '@/content/site'
 import { useApp, CATEGORY_IDS, CATEGORY_LABELS } from '@/lib/store'
@@ -128,17 +128,43 @@ export default function BrowsePanel() {
     selectCategory(CATEGORY_IDS[((i + delta) % n + n) % n], side)
   }
 
-  // Trackpad/mouse scroll over the switcher cycles sections — one step per
-  // gesture (cooldown), horizontal swipe (deltaX) or wheel (deltaY).
-  const wheelAt = useRef(0)
-  const onSwitcherWheel = (e: React.WheelEvent) => {
-    const d = Math.abs(e.deltaX) >= Math.abs(e.deltaY) ? e.deltaX : e.deltaY
-    if (Math.abs(d) < 1 || !activeCategory) return
-    const now = Date.now()
-    if (now - wheelAt.current < 350) return
-    wheelAt.current = now
-    cycle(d > 0 ? 1 : -1)
-  }
+  // Trackpad/mouse scroll over the switcher cycles sections. A NATIVE non-passive
+  // listener is used so we can preventDefault() — which both smooths the stepping
+  // (accumulated delta vs a hard cooldown) and BLOCKS Safari's two-finger
+  // back/forward swipe-navigation gesture.
+  const wheel = useRef({ acc: 0, last: 0, stepAt: 0 })
+  const wheelNode = useRef<HTMLDivElement | null>(null)
+  const wheelHandler = useRef<((e: WheelEvent) => void) | null>(null)
+  const setSwitcherEl = useCallback((el: HTMLDivElement | null) => {
+    if (wheelNode.current && wheelHandler.current) {
+      wheelNode.current.removeEventListener('wheel', wheelHandler.current)
+    }
+    wheelNode.current = el
+    if (!el) return
+    const handler = (e: WheelEvent) => {
+      const d = Math.abs(e.deltaX) >= Math.abs(e.deltaY) ? e.deltaX : e.deltaY
+      if (Math.abs(d) < 1) return
+      e.preventDefault() // stop Safari swipe-nav + any page scroll
+      const st = useApp.getState()
+      if (!st.activeCategory) return
+      const w = wheel.current
+      const now = Date.now()
+      // reset the accumulator on an idle pause or a direction flip
+      if (now - w.last > 180 || Math.sign(d) !== Math.sign(w.acc || d)) w.acc = 0
+      w.last = now
+      w.acc += d
+      if (Math.abs(w.acc) >= 50 && now - w.stepAt > 220) {
+        const dir = w.acc > 0 ? 1 : -1
+        w.acc = 0
+        w.stepAt = now
+        const n = CATEGORY_IDS.length
+        const i = CATEGORY_IDS.indexOf(st.activeCategory)
+        st.selectCategory(CATEGORY_IDS[((i + dir) % n + n) % n], st.side)
+      }
+    }
+    wheelHandler.current = handler
+    el.addEventListener('wheel', handler, { passive: false })
+  }, [])
 
   // Neighboring sections peek in, faded, on either side of the switcher:
   //   …morphic ‹ brands › dj se…
@@ -161,7 +187,7 @@ export default function BrowsePanel() {
         {aboutOpen ? (
           <h2 className={styles.railTitle}>about</h2>
         ) : category ? (
-          <div className={styles.switcher} onWheel={onSwitcherWheel}>
+          <div className={styles.switcher} ref={setSwitcherEl}>
             <button
               key={`p-${category.id}`}
               className={styles.ghostPrev}
