@@ -211,43 +211,6 @@
   align-items: center;
   justify-content: center;
 }
-/* all stage content (preview, loader, prompt, detail, about) layers ABOVE the
-   persistent black band — explicit z so there's no negative-z fragility */
-.stage > .previewGrid,
-.stage > .loaderWrap,
-.stage > .prompt,
-.stage > .detail,
-.stage > .about {
-  position: relative;
-  z-index: 1;
-}
-
-/* persistent black band (artists / dj sets): full viewport height, fading to
-   the page at its left and right edges. Sits behind the stage content. */
-.stageBand {
-  position: absolute;
-  top: -5.5rem; /* cancel the panel's padding → reach the viewport top */
-  bottom: -3rem; /* …and bottom */
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(52vw - 40px); /* 20px trimmed from each side */
-  z-index: 0;
-  pointer-events: none;
-  background: linear-gradient(
-    to right,
-    rgba(10, 10, 10, 0),
-    #0a0a0a 3.2%,
-    #0a0a0a 96.8%,
-    rgba(10, 10, 10, 0)
-  );
-}
-/* band leans toward the parked loop (which sits opposite the panel) */
-.left .stageBand {
-  left: calc(50% + 4rem); /* panel left → loop on the right */
-}
-.right .stageBand {
-  left: calc(50% - 4rem); /* panel right → loop on the left */
-}
 .prompt {
   color: var(--fg-dim);
 }
@@ -310,25 +273,6 @@
 /* brands: single hero shots render smaller than the default cap */
 .previewGrid[data-category='brands'] {
   max-width: 23.4rem;
-}
-
-/* artists + dj sets: previews sit on the persistent black band (stageBand);
-   horizontal padding keeps images inside the solid-black middle of the fade */
-.previewGrid[data-category='artists'],
-.previewGrid[data-category='djsets'],
-.loaderWrap[data-category='artists'],
-.loaderWrap[data-category='djsets'] {
-  width: 52vw;
-  max-width: none;
-  padding: 0 6vw;
-  box-sizing: border-box;
-  align-content: center;
-  justify-content: center;
-}
-/* loader text/ring read light on the black band */
-.loaderWrap[data-category='artists'],
-.loaderWrap[data-category='djsets'] {
-  color: #999;
 }
 
 /* ============ anamorphics: ONE consistent bounding box ============
@@ -501,9 +445,6 @@
   .stage {
     align-items: stretch;
     justify-content: flex-start;
-  }
-  .stageBand {
-    display: none; /* mobile panel is a solid surface; no band */
   }
   .about {
     margin: 0;

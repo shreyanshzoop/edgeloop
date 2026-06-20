@@ -237,11 +237,6 @@ export default function BrowsePanel() {
       </div>
 
       <div className={styles.stage}>
-        {/* persistent black band behind artists / dj sets previews — visible the
-            whole time the section is open, not just on hover */}
-        {(activeCategory === 'artists' || activeCategory === 'djsets') && !aboutOpen && !locked && (
-          <div className={styles.stageBand} aria-hidden />
-        )}
         {aboutOpen ? (
           <p className={styles.about}>{site.about}</p>
         ) : locked ? (
