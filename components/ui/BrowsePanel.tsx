@@ -12,6 +12,7 @@
 
 import { useCallback, useRef } from 'react'
 import Image from 'next/image'
+import ArtistBelt from './ArtistBelt'
 import { site } from '@/content/site'
 import { useApp, CATEGORY_IDS, CATEGORY_LABELS } from '@/lib/store'
 import type { Project } from '@/content/schema'
@@ -24,6 +25,10 @@ function youtubeId(url: string): string | null {
 }
 
 function Preview({ project }: { project: Project }) {
+  // Artists: images ride the 3D perspective belt (only this section).
+  if (project.category === 'artists' && project.images.length > 0) {
+    return <ArtistBelt key={project.slug} images={project.images} />
+  }
   if (project.images.length === 0) {
     // No media yet for this project — show a loading state instead of a blank.
     return (
