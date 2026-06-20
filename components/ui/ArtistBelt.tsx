@@ -40,11 +40,12 @@ export default function ArtistBelt({ images }: { images: ImageRef[] }) {
       const bell = Math.cos((t - 0.5) * Math.PI) // 1 at center, 0 at ends
       const tz = -240 + bell * 380 // depth: ends sit back, center forward
       const scale = 0.76 + bell * 0.44 // background stays sizeable
-      const rotX = (0.5 - bell) * 46 // tilt steeper toward the ends
       const edge = Math.min(t, 1 - t) / 0.09 // fade only at the very edges
       const opacity = Math.max(0, Math.min(1, edge))
+      // No rotateX — cards stay FLAT (parallel to the screen), just travelling
+      // up with depth scaling, rather than curving over like a conveyor.
       el.style.transform =
-        `translate(-50%, -50%) translateY(${ty}%) translateZ(${tz}px) rotateX(${rotX}deg) scale(${scale})`
+        `translate(-50%, -50%) translateY(${ty}%) translateZ(${tz}px) scale(${scale})`
       el.style.opacity = String(opacity)
       el.style.zIndex = String(Math.round(bell * 100))
     }
