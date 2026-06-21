@@ -98,7 +98,7 @@ export const site: SiteContent = {
         },
         {
           "slug": "aditya-birla-analyst-day",
-          "name": "Aditya Birla Analyst Day",
+          "name": "Aditya Birla",
           "category": "anamorphics",
           "order": 2,
           "layout": "grid2x2",
@@ -141,7 +141,7 @@ export const site: SiteContent = {
         },
         {
           "slug": "tata-accelerating-india",
-          "name": "TATA Accelerating India",
+          "name": "Tata AI",
           "category": "anamorphics",
           "order": 3,
           "layout": "stack",
