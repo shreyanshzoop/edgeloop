@@ -347,6 +347,21 @@
      project row in the rail (title 1.2rem + rail gap 1.6rem) */
   align-self: flex-start;
   margin-top: 2.8rem;
+  /* video + stats + description can run taller than the viewport — scroll
+     within this box only. `overscroll-behavior: contain` keeps the wheel from
+     chaining out, so it scrolls solely while the cursor is over this area. */
+  max-height: calc(100vh - 11.5rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 0.6rem;
+  scrollbar-width: thin;
+}
+.detail::-webkit-scrollbar {
+  width: 6px;
+}
+.detail::-webkit-scrollbar-thumb {
+  background: var(--fg-dim);
+  border-radius: 3px;
 }
 .back {
   align-self: flex-start;
@@ -456,6 +471,10 @@
   .detail {
     max-width: none;
     margin-top: 0; /* mobile panel scrolls; no rail alignment to match */
+    /* the whole panel scrolls on mobile — don't nest a second scroll area */
+    max-height: none;
+    overflow-y: visible;
+    padding-right: 0;
   }
   .detailImages {
     display: grid;
