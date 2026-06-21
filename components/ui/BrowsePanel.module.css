@@ -367,9 +367,11 @@
    only the project list on the inner side. (Object sits opposite the panel.) */
 .left .detail {
   margin-left: auto;
+  transform: translateX(8vw); /* nudge past the panel edge, closer to the loop */
 }
 .right .detail {
   margin-right: auto;
+  transform: translateX(-8vw);
 }
 .back {
   align-self: flex-start;
