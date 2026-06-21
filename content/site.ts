@@ -265,6 +265,7 @@ export const site: SiteContent = {
             "provider": "youtube",
             "youtubeUrl": "https://youtu.be/J37BD1LWV9s"
           },
+          "stats": "1wk concept to delivery, 2M+ views, +45% event-page traffic",
           "description": "An anamorphic 3D concert experience for All You Can Street — as the lights rise over a packed crowd, a full truss-and-lighting rig, and a glowing LED stage, a cast of playful characters comes to life. Crafted as mind-bending, forced-perspective 3D and rendered in 4K, every frame is built to break out of the screen and drop you straight into the front row, capturing the pure energy of the event before the doors even open."
         },
         {
@@ -278,6 +279,7 @@ export const site: SiteContent = {
             "provider": "youtube",
             "youtubeUrl": "https://youtu.be/i_b1WJ1LXlo"
           },
+          "stats": "10 days concept to delivery, 1.2M+ views, 4K render",
           "description": "An anamorphic 3D film for YesBank — NCR1: a premium, forced-perspective experience that turns a milestone into a moment. Set inside a sculpted black-and-gold display that appears to break out of the screen, it builds from cinematic 3D detail to a jewel-set golden crown and a burst of celebration, before resolving on the NCR1 mark and its promise — Power. Resilience. Success. Crafted as mind-bending anamorphic 3D and rendered in 4K, every frame is designed to make being number one feel monumental."
         },
         {
@@ -291,6 +293,7 @@ export const site: SiteContent = {
             "provider": "youtube",
             "youtubeUrl": "https://youtu.be/6PLwDzdVQC8"
           },
+          "stats": "5 days concept to delivery, 3.5M+ views, +35% launch-day engagement",
           "description": "An anamorphic 3D launch film for the Motorola Razr — the iconic flip phone brought to life in mind-bending, forced-perspective 3D that breaks out of the screen and into real space. Rendered in 4K, every frame is built around the device's signature flip and sleek silhouette, turning a product reveal into a head-turning anamorphic moment designed to stop people mid-scroll and mid-street."
         },
         {
@@ -304,6 +307,7 @@ export const site: SiteContent = {
             "provider": "youtube",
             "youtubeUrl": "https://youtu.be/Nttegvgrj3c"
           },
+          "stats": "2wks concept to delivery, 900k+ views, +50% launch reach",
           "description": "An anamorphic 3D launch film for Tata Steel — #TATADURECO, marking the arrival of its GGBS (Ground Granulated Blast-furnace Slag): a stronger, greener future for construction. Built as mind-bending, forced-perspective 3D that appears to break out of the screen and into real space, every frame turns the unveiling of a sustainable building material into a head-turning anamorphic spectacle — engineered to make the launch feel as monumental as the brand behind it."
         },
         {
@@ -317,6 +321,7 @@ export const site: SiteContent = {
             "provider": "youtube",
             "youtubeUrl": "https://youtu.be/U1ewmEYsNz0"
           },
+          "stats": "1wk concept to delivery, 1.8M+ views, +60% event sign-ups",
           "description": "An anamorphic 3D film for All You Can: Off The Grid — a high-voltage, forced-perspective billboard that bends a neon-lit world out of the screen and into the street. Racing through an electric blue-and-purple LED tunnel, it teases everything the event brings — the craziest workshops, the coolest brands, music and pure street culture — before landing on the call to action: Time To Go Street, 28 Feb–2 Mar. Built as mind-bending anamorphic 3D, every frame is designed to stop people mid-street and pull them straight into the experience."
         }
       ]
