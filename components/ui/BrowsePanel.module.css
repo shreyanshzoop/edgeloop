@@ -181,14 +181,14 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 0.15rem;
 }
 .item {
   background: none;
   border: none;
   font: inherit;
   cursor: pointer;
-  padding: 0;
+  padding: 0.05rem 0;
   text-align: left;
   color: var(--fg-muted);
   transition: color 0.18s ease;
@@ -367,11 +367,11 @@
    only the project list on the inner side. (Object sits opposite the panel.) */
 .left .detail {
   margin-left: auto;
-  transform: translateX(8vw); /* nudge past the panel edge, closer to the loop */
+  transform: translateX(4vw); /* sit at the divider line, away from the rail */
 }
 .right .detail {
   margin-right: auto;
-  transform: translateX(-8vw);
+  transform: translateX(-4vw);
 }
 .back {
   align-self: flex-start;
