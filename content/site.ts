@@ -282,7 +282,7 @@ export const site: SiteContent = {
         },
         {
           "slug": "motorola-razr-anamorphic-launch",
-          "name": "Motorola Razor Anamorphic Launch",
+          "name": "Motorola Razor",
           "category": "anamorphics",
           "order": 8,
           "layout": "single",
