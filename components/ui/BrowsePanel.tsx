@@ -76,7 +76,6 @@ function ProjectDetail({ project, onBack }: { project: Project; onBack: () => vo
         ← back
       </button>
       <h2 className={styles.detailName}>{project.name}</h2>
-      {project.stats && <p className={styles.stats}>{project.stats}</p>}
       {/* images shown inside detail on touch/mobile (no hover preview there) */}
       {project.images.length > 0 && (
         <div className={styles.detailImages} data-layout={project.layout}>
@@ -104,6 +103,7 @@ function ProjectDetail({ project, onBack }: { project: Project; onBack: () => vo
           />
         </div>
       )}
+      {project.stats && <p className={styles.stats}>{project.stats}</p>}
       {project.description && <p className={styles.desc}>{project.description}</p>}
     </article>
   )
