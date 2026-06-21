@@ -343,24 +343,18 @@
   gap: 1rem;
   width: 100%;
   max-width: 42rem;
-  /* anchor to the top of the stage so "← back" sits level with the FIRST
-     project row in the rail (title 1.2rem + rail gap 1.6rem) */
+  /* "← back" sits level with the section slider at the top of the rail, so the
+     whole detail (title, video, stats, description) starts up there too. */
   align-self: flex-start;
-  margin-top: 2.8rem;
+  margin-top: 0;
   /* video + stats + description can run taller than the viewport — scroll
      within this box only. `overscroll-behavior: contain` keeps the wheel from
      chaining out, so it scrolls solely while the cursor is over this area. */
-  max-height: calc(100vh - 11.5rem);
+  max-height: calc(100vh - 8.5rem);
   overflow-y: auto;
   overscroll-behavior: contain;
   padding-right: 0.6rem;
   scrollbar-width: thin;
-}
-/* anamorphics: lift the whole detail so "← back" sits level with the section
-   slider (not the first project row), bringing everything below it up too. */
-.detail[data-category='anamorphics'] {
-  margin-top: 0;
-  max-height: calc(100vh - 8.5rem);
 }
 .detail::-webkit-scrollbar {
   width: 6px;
