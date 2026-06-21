@@ -253,6 +253,19 @@ export const site: SiteContent = {
           },
           "stats": "50k+ footfall, +30% booth dwell time, 10 days concept to delivery",
           "description": "Anamorphic brand reveal for Mindgate — 'Delivering Innovation' — staged inside a clean light-box environment. Produced for a fintech industry summit with around 400 attendees."
+        },
+        {
+          "slug": "all-you-can-street",
+          "name": "All You Can Street",
+          "category": "anamorphics",
+          "order": 6,
+          "layout": "single",
+          "images": [],
+          "video": {
+            "provider": "youtube",
+            "youtubeUrl": "https://youtu.be/J37BD1LWV9s"
+          },
+          "description": "An anamorphic 3D concert experience for All You Can Street — as the lights rise over a packed crowd, a full truss-and-lighting rig, and a glowing LED stage, a cast of playful characters comes to life. Crafted as mind-bending, forced-perspective 3D and rendered in 4K, every frame is built to break out of the screen and drop you straight into the front row, capturing the pure energy of the event before the doors even open."
         }
       ]
     },
