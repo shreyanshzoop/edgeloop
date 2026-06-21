@@ -71,7 +71,7 @@ function ProjectDetail({ project, onBack }: { project: Project; onBack: () => vo
       ? youtubeId(project.video.youtubeUrl)
       : null
   return (
-    <article className={styles.detail}>
+    <article className={styles.detail} data-category={project.category}>
       <button className={styles.back} onClick={onBack}>
         ← back
       </button>

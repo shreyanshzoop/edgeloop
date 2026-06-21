@@ -356,6 +356,12 @@
   padding-right: 0.6rem;
   scrollbar-width: thin;
 }
+/* anamorphics: lift the whole detail so "← back" sits level with the section
+   slider (not the first project row), bringing everything below it up too. */
+.detail[data-category='anamorphics'] {
+  margin-top: 0;
+  max-height: calc(100vh - 8.5rem);
+}
 .detail::-webkit-scrollbar {
   width: 6px;
 }
