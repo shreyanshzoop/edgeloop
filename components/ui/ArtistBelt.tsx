@@ -36,18 +36,13 @@ export default function ArtistBelt({ images }: { images: ImageRef[] }) {
 
     const apply = (el: HTMLDivElement, t: number) => {
       // t in [0,1): 0 = bottom/back, 0.5 = center/front, 1 = top/back
-      const ty = 56 - t * 112 // vertical travel
-      const bell = Math.cos((t - 0.5) * Math.PI) // 1 at center, 0 at ends
-      const tz = -240 + bell * 380 // depth: ends sit back, center forward
-      const scale = 0.76 + bell * 0.44 // background stays sizeable
-      const edge = Math.min(t, 1 - t) / 0.09 // fade only at the very edges
-      const opacity = Math.max(0, Math.min(1, edge))
-      // No rotateX — cards stay FLAT (parallel to the screen), just travelling
-      // up with depth scaling, rather than curving over like a conveyor.
-      el.style.transform =
-        `translate(-50%, -50%) translateY(${ty}%) translateZ(${tz}px) scale(${scale})`
-      el.style.opacity = String(opacity)
-      el.style.zIndex = String(Math.round(bell * 100))
+      // Pure flat belt: identical rectangles travelling straight up, evenly
+      // spaced — no perspective, no scale, no tilt, no forward push. The belt's
+      // top/bottom mask feathers them as they enter/exit.
+      const span = N * 125 // % of item height across one full loop (125% per item)
+      const ty = span / 2 - t * span
+      el.style.transform = `translate(-50%, -50%) translateY(${ty}%)`
+      el.style.opacity = '1'
     }
 
     const reduced =
