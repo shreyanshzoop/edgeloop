@@ -336,30 +336,178 @@ export const site: SiteContent = {
           "category": "artists",
           "order": 0,
           "layout": "trio",
-          "images": [
+          "images": [],
+          "media": [
             {
-              "src": "/media/artists/aminjaz/0.jpg",
-              "alt": "Aminjaz — Artists (1)",
-              "width": 1280,
-              "height": 1280,
-              "transparent": false
+              "kind": "video",
+              "src": "/media/artists/aminjaz/whack-a-dj.mp4",
+              "alt": "Aminjaz — Whack a DJ",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/aminjaz/whack-a-dj.jpg"
             },
             {
-              "src": "/media/artists/aminjaz/1.jpg",
-              "alt": "Aminjaz — Artists (2)",
-              "width": 1280,
-              "height": 720,
-              "transparent": false
+              "kind": "video",
+              "src": "/media/artists/aminjaz/osci-laser.mp4",
+              "alt": "Aminjaz — Osci Laser",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/aminjaz/osci-laser.jpg"
             },
             {
-              "src": "/media/artists/aminjaz/2.jpg",
-              "alt": "Aminjaz — Artists (3)",
-              "width": 1280,
-              "height": 1280,
-              "transparent": false
+              "kind": "video",
+              "src": "/media/artists/aminjaz/gun-aj.mp4",
+              "alt": "Aminjaz — Gun AJ",
+              "width": 480,
+              "height": 480,
+              "poster": "/media/artists/aminjaz/gun-aj.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/aminjaz/alien-head.mp4",
+              "alt": "Aminjaz — Alien Head",
+              "width": 860,
+              "height": 480,
+              "poster": "/media/artists/aminjaz/alien-head.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/aminjaz/amin-lips-hue-shift.mp4",
+              "alt": "Aminjaz — Amin Lips Hue Shift",
+              "width": 860,
+              "height": 480,
+              "poster": "/media/artists/aminjaz/amin-lips-hue-shift.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/aminjaz/chain-glint.mp4",
+              "alt": "Aminjaz — Chain Glint",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/aminjaz/chain-glint.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/aminjaz/fire-blue.mp4",
+              "alt": "Aminjaz — Fire Blue",
+              "width": 860,
+              "height": 480,
+              "poster": "/media/artists/aminjaz/fire-blue.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/aminjaz/katana.mp4",
+              "alt": "Aminjaz — Katana",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/aminjaz/katana.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/aminjaz/tubes-amin.mp4",
+              "alt": "Aminjaz — Tubes Amin",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/aminjaz/tubes-amin.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/aminjaz/overlayed.mp4",
+              "alt": "Aminjaz — Overlayed",
+              "width": 884,
+              "height": 480,
+              "poster": "/media/artists/aminjaz/overlayed.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/aminjaz/osci.mp4",
+              "alt": "Aminjaz — Osci",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/aminjaz/osci.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/aminjaz/ice-hue-shift.mp4",
+              "alt": "Aminjaz — Ice Hue Shift",
+              "width": 860,
+              "height": 480,
+              "poster": "/media/artists/aminjaz/ice-hue-shift.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/aminjaz/ice.mp4",
+              "alt": "Aminjaz — Ice",
+              "width": 860,
+              "height": 480,
+              "poster": "/media/artists/aminjaz/ice.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/aminjaz/fire.mp4",
+              "alt": "Aminjaz — Fire",
+              "width": 860,
+              "height": 480,
+              "poster": "/media/artists/aminjaz/fire.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/aminjaz/fire-hue-shift.mp4",
+              "alt": "Aminjaz — Fire Hue Shift",
+              "width": 860,
+              "height": 480,
+              "poster": "/media/artists/aminjaz/fire-hue-shift.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/aminjaz/aj-sigil.mp4",
+              "alt": "Aminjaz — AJ Sigil",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/aminjaz/aj-sigil.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/aminjaz/alien-wire.mp4",
+              "alt": "Aminjaz — Alien + Wire",
+              "width": 860,
+              "height": 480,
+              "poster": "/media/artists/aminjaz/alien-wire.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/aminjaz/neon-red.mp4",
+              "alt": "Aminjaz — Neon Red",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/aminjaz/neon-red.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/aminjaz/vhs.mp4",
+              "alt": "Aminjaz — VHS",
+              "width": 856,
+              "height": 480,
+              "poster": "/media/artists/aminjaz/vhs.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/aminjaz/tv-flicker.mp4",
+              "alt": "Aminjaz — TV Flicker",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/aminjaz/tv-flicker.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/aminjaz/knuckles.mp4",
+              "alt": "Aminjaz — Knuckles",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/aminjaz/knuckles.jpg"
             }
           ],
-          "description": "A set of CGI motion frames produced under the Aminjaz banner — a hero prop study, a playful whack-a-DJ concept, and a neon arcade machine. Three distinct ideas tied together by bold lighting and clean render craft."
+          "description": "A reel of CGI motion loops and live-show visuals produced under the Aminjaz banner — fire, ice, neon, oscilloscope, chrome and character studies, plus glitch and VHS textures built for stage screens and social."
         },
         {
           "slug": "stuvi",

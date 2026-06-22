@@ -10,7 +10,7 @@
  * and the generated content; it is the semantic, crawlable layer behind the canvas.
  */
 
-import { useCallback, useRef } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import ArtistBelt from './ArtistBelt'
 import { site } from '@/content/site'
@@ -25,9 +25,18 @@ function youtubeId(url: string): string | null {
 }
 
 function Preview({ project }: { project: Project }) {
-  // Artists: images ride the 3D perspective belt (only this section).
-  if (project.category === 'artists' && project.images.length > 0) {
-    return <ArtistBelt key={project.slug} images={project.images} />
+  // Artists: media (videos and/or images) ride the 3D perspective belt.
+  if (project.category === 'artists') {
+    const items =
+      project.media ??
+      project.images.map((img) => ({
+        kind: 'image' as const,
+        src: img.src,
+        alt: img.alt,
+        width: img.width,
+        height: img.height,
+      }))
+    if (items.length > 0) return <ArtistBelt key={project.slug} items={items} />
   }
   if (project.images.length === 0) {
     // No media yet for this project — show a loading state instead of a blank.
@@ -70,12 +79,64 @@ function ProjectDetail({ project, onBack }: { project: Project; onBack: () => vo
     project.video?.provider === 'youtube' && project.video.youtubeUrl
       ? youtubeId(project.video.youtubeUrl)
       : null
+
+  // Media grid (videos/images) — used when a project carries its own media reel
+  // (e.g. the artist visual loops). Only clips scrolled into view actually play.
+  const mediaWrap = useRef<HTMLDivElement | null>(null)
+  useEffect(() => {
+    const wrap = mediaWrap.current
+    if (!wrap) return
+    const vids = Array.from(wrap.querySelectorAll('video'))
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          const v = e.target as HTMLVideoElement
+          if (e.isIntersecting) v.play().catch(() => {})
+          else v.pause()
+        })
+      },
+      { threshold: 0.25 },
+    )
+    vids.forEach((v) => io.observe(v))
+    return () => io.disconnect()
+  }, [project.slug])
+
   return (
     <article className={styles.detail} data-category={project.category}>
       <button className={styles.back} onClick={onBack}>
         ← back
       </button>
       <h2 className={styles.detailName}>{project.name}</h2>
+      {/* media reel: looping clips and/or stills carried by the project */}
+      {project.media && project.media.length > 0 && (
+        <div className={styles.detailMedia} ref={mediaWrap}>
+          {project.media.map((m) =>
+            m.kind === 'video' ? (
+              <video
+                key={m.src}
+                className={styles.detailVid}
+                src={m.src}
+                poster={m.poster}
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label={m.alt}
+              />
+            ) : (
+              <Image
+                key={m.src}
+                src={m.src}
+                alt={m.alt}
+                width={m.width}
+                height={m.height}
+                className={styles.previewImg}
+                sizes="90vw"
+              />
+            ),
+          )}
+        </div>
+      )}
       {/* images shown inside detail on touch/mobile (no hover preview there) */}
       {project.images.length > 0 && (
         <div className={styles.detailImages} data-layout={project.layout}>

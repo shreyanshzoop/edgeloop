@@ -400,6 +400,21 @@
   color: var(--fg-muted);
   line-height: 1.75;
 }
+/* media reel grid (artist visual loops) inside the locked detail view */
+.detailMedia {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+  width: 100%;
+}
+.detailVid {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--surface);
+  border-radius: 2px;
+  display: block;
+}
 .video {
   position: relative;
   width: 100%;

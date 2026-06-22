@@ -31,6 +31,21 @@ export const ImageRef = z.object({
 export type ImageRef = z.infer<typeof ImageRef>
 
 /**
+ * A belt media item — either a still image or a self-hosted looping video clip.
+ * `poster` (video only) is a still frame shown before the clip plays. Used by
+ * the artists hover belt so a project can ride videos as well as pictures.
+ */
+export const MediaRef = z.object({
+  kind: z.enum(['image', 'video']),
+  src: z.string().min(1).startsWith('/media/'),
+  alt: z.string().min(1, 'alt text is required and must be non-empty'),
+  width: z.int().positive(),
+  height: z.int().positive(),
+  poster: z.string().startsWith('/media/').optional(),
+})
+export type MediaRef = z.infer<typeof MediaRef>
+
+/**
  * A video reference. Either a YouTube embed (`provider: 'youtube'` +
  * `youtubeUrl`) or a self-hosted file (`provider: 'self'` + `src`).
  * `poster` is an optional still frame path.
@@ -65,6 +80,9 @@ export const Project = z.object({
   order: z.int().nonnegative(),
   layout: Layout,
   images: z.array(ImageRef),
+  /** Optional belt media (images and/or videos) — overrides `images` on the
+   *  artists hover belt when present. */
+  media: z.array(MediaRef).optional(),
   video: VideoRef.optional(),
   stats: z.string().optional(),
   description: z.string().optional(),
