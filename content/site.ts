@@ -533,23 +533,90 @@ export const site: SiteContent = {
           "category": "artists",
           "order": 3,
           "layout": "duo",
-          "images": [
+          "images": [],
+          "media": [
             {
-              "src": "/media/artists/the-sincerities/0.jpg",
-              "alt": "The Sincerities — Artists (1)",
-              "width": 1280,
-              "height": 720,
-              "transparent": false
+              "kind": "video",
+              "src": "/media/artists/the-sincerities/look-at-you.mp4",
+              "alt": "The Sincerities — Look At You",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/the-sincerities/look-at-you.jpg"
             },
             {
-              "src": "/media/artists/the-sincerities/1.jpg",
-              "alt": "The Sincerities — Artists (2)",
-              "width": 1280,
-              "height": 720,
-              "transparent": false
+              "kind": "video",
+              "src": "/media/artists/the-sincerities/main-logo-red.mp4",
+              "alt": "The Sincerities — Main Logo Red",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/the-sincerities/main-logo-red.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/the-sincerities/main-logo-white.mp4",
+              "alt": "The Sincerities — Main Logo White",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/the-sincerities/main-logo-white.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/the-sincerities/robbers.mp4",
+              "alt": "The Sincerities — Robbers",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/the-sincerities/robbers.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/the-sincerities/she-looks-so-perfect.mp4",
+              "alt": "The Sincerities — She Looks So Perfect",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/the-sincerities/she-looks-so-perfect.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/the-sincerities/somebody-to-love.mp4",
+              "alt": "The Sincerities — Somebody to Love",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/the-sincerities/somebody-to-love.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/the-sincerities/teenage-dirtbag.mp4",
+              "alt": "The Sincerities — Teenage Dirtbag",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/the-sincerities/teenage-dirtbag.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/the-sincerities/vinyl-2.mp4",
+              "alt": "The Sincerities — Vinyl 2",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/the-sincerities/vinyl-2.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/the-sincerities/vinyl.mp4",
+              "alt": "The Sincerities — Vinyl",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/the-sincerities/vinyl.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/the-sincerities/yellow.mp4",
+              "alt": "The Sincerities — Yellow",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/the-sincerities/yellow.jpg"
             }
           ],
-          "description": "Two CGI motion pieces for The Sincerities — a moonlit beach-house drive and a bold yellow colour study. Atmospheric, cinematic visuals built to set a mood."
+          "description": "A run of music-video and motion work for The Sincerities — covers and originals (Look At You, Robbers, She Looks So Perfect, Somebody to Love, Teenage Dirtbag, Yellow) plus logo and vinyl idents. Cinematic, mood-driven visuals built for release."
         }
       ]
     },
