@@ -791,6 +791,10 @@ export const site: SiteContent = {
               "transparent": false
             }
           ],
+          "video": {
+            "provider": "youtube",
+            "youtubeUrl": "https://youtube.com/shorts/gGfC5c7JtoI"
+          },
           "description": "A retro-TV teaser made for AYC — All You Can. A vintage CRT set sits on a graffiti-tagged cabinet, wrapped in glowing neon cabling inside a moody studio, its screen flickering through VHS static, warped colour bars and red glowing logos before snapping to the event dates — July 4, 5, 6. The whole piece leans hard into a street-culture, analog-glitch aesthetic: tape noise, scanlines and hand-scrawled tags, turning a simple date drop into a nostalgic, scroll-stopping announcement."
         }
       ]
