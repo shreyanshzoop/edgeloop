@@ -838,6 +838,23 @@ export const site: SiteContent = {
             "youtubeUrl": "https://youtube.com/shorts/WQ1RYye3sXg"
           },
           "description": "A playful 3D promo for Lil Flea — a festive 'AYC Gift Shop' scene built entirely in 3D. A row of quirky, fuzzy-headed characters mans a fairy-lit market stall set in a flower-strewn meadow at golden hour, all tucked under a striped carnival canopy, before landing on the line 'Lil Flea, Get Gifting!'. Warm, whimsical and character-driven, it turns the flea-market shopping experience into a charming little world made to put a smile on shoppers and pull them into the gifting season."
+        },
+        {
+          "slug": "supermarket",
+          "name": "Supermarket",
+          "category": "brands",
+          "order": 10,
+          "layout": "single",
+          "images": [
+            {
+              "src": "/media/brands/supermarket/0.jpg",
+              "alt": "Supermarket — Brands",
+              "width": 1080,
+              "height": 1920,
+              "transparent": false
+            }
+          ],
+          "description": "A 3D supermarket flythrough that glides first-person down a stocked grocery aisle — shelves packed with colourful cereal, chips and packaged goods sliding past a shopping cart — before pushing in on a hero cereal box: 'Fresh Off The Rack', stamped with a bold NEW badge and All You Can branding. Built entirely in 3D, it stages a product drop like a supermarket discovery, turning an everyday retail-shelf moment into a slick, scroll-stopping reveal."
         }
       ]
     },
