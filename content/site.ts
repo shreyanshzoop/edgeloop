@@ -729,6 +729,23 @@ export const site: SiteContent = {
           },
           "stats": "12hrs concept to delivery, 100k+ views, 0 set days",
           "description": "The brief was simple make it feel like a night you'd never forget. We built a full tropical sunset environment from scratch palm silhouettes, string lights, open ocean, a pirate ship on the horizon. The product just lived inside the world we created."
+        },
+        {
+          "slug": "bajaj-pulsar",
+          "name": "Bajaj Pulsar",
+          "category": "brands",
+          "order": 5,
+          "layout": "single",
+          "images": [
+            {
+              "src": "/media/brands/bajaj-pulsar/0.jpg",
+              "alt": "Bajaj Pulsar — Brands",
+              "width": 1080,
+              "height": 1920,
+              "transparent": false
+            }
+          ],
+          "description": "A launch teaser made for Bajaj Pulsar, built around the facelift of the bike. The piece teases the refreshed Pulsar — sharper, more aggressive styling, a new lighting signature and cleaner detailing — through tight, high-contrast beauty shots that reveal the machine piece by piece while holding back the full look to build anticipation ahead of launch. Cut as a punchy, vertical social-first teaser designed to spark pre-launch buzz and give the bike a bold on-screen presence across the brand's channels."
         }
       ]
     },
