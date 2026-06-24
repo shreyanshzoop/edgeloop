@@ -833,6 +833,10 @@ export const site: SiteContent = {
               "transparent": false
             }
           ],
+          "video": {
+            "provider": "youtube",
+            "youtubeUrl": "https://youtube.com/shorts/WQ1RYye3sXg"
+          },
           "description": "A playful 3D promo for Lil Flea — a festive 'AYC Gift Shop' scene built entirely in 3D. A row of quirky, fuzzy-headed characters mans a fairy-lit market stall set in a flower-strewn meadow at golden hour, all tucked under a striped carnival canopy, before landing on the line 'Lil Flea, Get Gifting!'. Warm, whimsical and character-driven, it turns the flea-market shopping experience into a charming little world made to put a smile on shoppers and pull them into the gifting season."
         }
       ]
