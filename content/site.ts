@@ -812,6 +812,10 @@ export const site: SiteContent = {
               "transparent": false
             }
           ],
+          "video": {
+            "provider": "youtube",
+            "youtubeUrl": "https://youtube.com/shorts/3jvHxG2Axbo"
+          },
           "description": "A concept brand post for Bluorng, the clothing label teasing a racing-inspired drop. Built entirely in 3D, it follows an orange-and-black open-wheel racer carving down a tree-lined road and prowling through a lush, fern-covered clearing — turning the idea of racing apparel into pure speed and attitude before resolving on the reveal. A high-octane teaser that sells the collection as a concept first: motorsport craft meets street energy, unveiled for the All You Can showcase — July 4–6, Jio World Convention Centre, Mumbai."
         }
       ]
