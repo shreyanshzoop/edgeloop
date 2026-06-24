@@ -754,6 +754,23 @@ export const site: SiteContent = {
             "youtubeUrl": "https://youtube.com/shorts/3l7PyPD1KgQ"
           },
           "description": "A launch teaser made for Bajaj Pulsar, built around the facelift of the bike. The piece teases the refreshed Pulsar — sharper, more aggressive styling, a new lighting signature and cleaner detailing — through tight, high-contrast beauty shots that reveal the machine piece by piece while holding back the full look to build anticipation ahead of launch. Cut as a punchy, vertical social-first teaser designed to spark pre-launch buzz and give the bike a bold on-screen presence across the brand's channels."
+        },
+        {
+          "slug": "ayc-birthday-invite",
+          "name": "AYC Birthday Invite",
+          "category": "brands",
+          "order": 6,
+          "layout": "single",
+          "images": [
+            {
+              "src": "/media/brands/ayc-birthday-invite/0.jpg",
+              "alt": "AYC Birthday Invite — Brands",
+              "width": 900,
+              "height": 1200,
+              "transparent": false
+            }
+          ],
+          "description": "A fully 3D-generated invitation made for a birthday party hosted by AYC — All You Can. Every element is built and rendered in 3D — the set, the props, the type and the party details — with no live footage anywhere in frame, turning the invite itself into a playful, tactile little world. Designed as a scroll-stopping social post that doubles as the save-the-date, setting the celebration's tone and getting guests hyped well before the doors open."
         }
       ]
     },
