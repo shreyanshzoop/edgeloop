@@ -745,6 +745,10 @@ export const site: SiteContent = {
               "transparent": false
             }
           ],
+          "video": {
+            "provider": "youtube",
+            "youtubeUrl": "https://youtube.com/shorts/3l7PyPD1KgQ"
+          },
           "description": "A launch teaser made for Bajaj Pulsar, built around the facelift of the bike. The piece teases the refreshed Pulsar — sharper, more aggressive styling, a new lighting signature and cleaner detailing — through tight, high-contrast beauty shots that reveal the machine piece by piece while holding back the full look to build anticipation ahead of launch. Cut as a punchy, vertical social-first teaser designed to spark pre-launch buzz and give the bike a bold on-screen presence across the brand's channels."
         }
       ]
