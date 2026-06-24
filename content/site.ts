@@ -757,19 +757,23 @@ export const site: SiteContent = {
         },
         {
           "slug": "ayc-birthday-invite",
-          "name": "AYC Birthday Invite",
+          "name": "AYC Birthday",
           "category": "brands",
           "order": 6,
           "layout": "single",
           "images": [
             {
               "src": "/media/brands/ayc-birthday-invite/0.jpg",
-              "alt": "AYC Birthday Invite — Brands",
+              "alt": "AYC Birthday — Brands",
               "width": 900,
               "height": 1200,
               "transparent": false
             }
           ],
+          "video": {
+            "provider": "youtube",
+            "youtubeUrl": "https://youtube.com/shorts/LQGJfZXdmbM"
+          },
           "description": "A fully 3D-generated invitation made for a birthday party hosted by AYC — All You Can. Every element is built and rendered in 3D — the set, the props, the type and the party details — with no live footage anywhere in frame, turning the invite itself into a playful, tactile little world. Designed as a scroll-stopping social post that doubles as the save-the-date, setting the celebration's tone and getting guests hyped well before the doors open."
         }
       ]
