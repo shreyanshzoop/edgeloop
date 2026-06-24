@@ -775,6 +775,23 @@ export const site: SiteContent = {
             "youtubeUrl": "https://youtube.com/shorts/LQGJfZXdmbM"
           },
           "description": "A fully 3D-generated invitation made for a birthday party hosted by AYC — All You Can. Every element is built and rendered in 3D — the set, the props, the type and the party details — with no live footage anywhere in frame, turning the invite itself into a playful, tactile little world. Designed as a scroll-stopping social post that doubles as the save-the-date, setting the celebration's tone and getting guests hyped well before the doors open."
+        },
+        {
+          "slug": "ayc-tv",
+          "name": "AYC TV",
+          "category": "brands",
+          "order": 7,
+          "layout": "single",
+          "images": [
+            {
+              "src": "/media/brands/ayc-tv/0.jpg",
+              "alt": "AYC TV — Brands",
+              "width": 360,
+              "height": 640,
+              "transparent": false
+            }
+          ],
+          "description": "A retro-TV teaser made for AYC — All You Can. A vintage CRT set sits on a graffiti-tagged cabinet, wrapped in glowing neon cabling inside a moody studio, its screen flickering through VHS static, warped colour bars and red glowing logos before snapping to the event dates — July 4, 5, 6. The whole piece leans hard into a street-culture, analog-glitch aesthetic: tape noise, scanlines and hand-scrawled tags, turning a simple date drop into a nostalgic, scroll-stopping announcement."
         }
       ]
     },
