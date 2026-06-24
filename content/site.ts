@@ -817,6 +817,23 @@ export const site: SiteContent = {
             "youtubeUrl": "https://youtube.com/shorts/3jvHxG2Axbo"
           },
           "description": "A concept brand post for Bluorng, the clothing label teasing a racing-inspired drop. Built entirely in 3D, it follows an orange-and-black open-wheel racer carving down a tree-lined road and prowling through a lush, fern-covered clearing — turning the idea of racing apparel into pure speed and attitude before resolving on the reveal. A high-octane teaser that sells the collection as a concept first: motorsport craft meets street energy, unveiled for the All You Can showcase — July 4–6, Jio World Convention Centre, Mumbai."
+        },
+        {
+          "slug": "lil-flea",
+          "name": "Lil Flea",
+          "category": "brands",
+          "order": 9,
+          "layout": "single",
+          "images": [
+            {
+              "src": "/media/brands/lil-flea/0.jpg",
+              "alt": "Lil Flea — Brands",
+              "width": 1080,
+              "height": 1920,
+              "transparent": false
+            }
+          ],
+          "description": "A playful 3D promo for Lil Flea — a festive 'AYC Gift Shop' scene built entirely in 3D. A row of quirky, fuzzy-headed characters mans a fairy-lit market stall set in a flower-strewn meadow at golden hour, all tucked under a striped carnival canopy, before landing on the line 'Lil Flea, Get Gifting!'. Warm, whimsical and character-driven, it turns the flea-market shopping experience into a charming little world made to put a smile on shoppers and pull them into the gifting season."
         }
       ]
     },
