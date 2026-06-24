@@ -639,6 +639,10 @@ export const site: SiteContent = {
               "transparent": false
             }
           ],
+          "video": {
+            "provider": "youtube",
+            "youtubeUrl": "https://youtube.com/shorts/9ZzrblMuHco"
+          },
           "stats": "8hrs concept to delivery, 100k+ views, 0 vehicles used",
           "description": "Custom 3D brand posts for FILA hyper-real truck wraps and branded livery rendered entirely in 3D. Every angle. every reflection, every surface built without a single vehicle on set or location day spent."
         },
