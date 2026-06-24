@@ -796,6 +796,23 @@ export const site: SiteContent = {
             "youtubeUrl": "https://youtube.com/shorts/gGfC5c7JtoI"
           },
           "description": "A retro-TV teaser made for AYC — All You Can. A vintage CRT set sits on a graffiti-tagged cabinet, wrapped in glowing neon cabling inside a moody studio, its screen flickering through VHS static, warped colour bars and red glowing logos before snapping to the event dates — July 4, 5, 6. The whole piece leans hard into a street-culture, analog-glitch aesthetic: tape noise, scanlines and hand-scrawled tags, turning a simple date drop into a nostalgic, scroll-stopping announcement."
+        },
+        {
+          "slug": "bluorng",
+          "name": "Bluorng",
+          "category": "brands",
+          "order": 8,
+          "layout": "single",
+          "images": [
+            {
+              "src": "/media/brands/bluorng/0.jpg",
+              "alt": "Bluorng — Brands",
+              "width": 360,
+              "height": 640,
+              "transparent": false
+            }
+          ],
+          "description": "A concept brand post for Bluorng, the clothing label teasing a racing-inspired drop. Built entirely in 3D, it follows an orange-and-black open-wheel racer carving down a tree-lined road and prowling through a lush, fern-covered clearing — turning the idea of racing apparel into pure speed and attitude before resolving on the reveal. A high-octane teaser that sells the collection as a concept first: motorsport craft meets street energy, unveiled for the All You Can showcase — July 4–6, Jio World Convention Centre, Mumbai."
         }
       ]
     },
