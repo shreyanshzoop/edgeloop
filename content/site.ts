@@ -854,6 +854,10 @@ export const site: SiteContent = {
               "transparent": false
             }
           ],
+          "video": {
+            "provider": "youtube",
+            "youtubeUrl": "https://youtube.com/shorts/l6ux9ZcbG50"
+          },
           "description": "A 3D supermarket flythrough that glides first-person down a stocked grocery aisle — shelves packed with colourful cereal, chips and packaged goods sliding past a shopping cart — before pushing in on a hero cereal box: 'Fresh Off The Rack', stamped with a bold NEW badge and All You Can branding. Built entirely in 3D, it stages a product drop like a supermarket discovery, turning an everyday retail-shelf moment into a slick, scroll-stopping reveal."
         }
       ]
