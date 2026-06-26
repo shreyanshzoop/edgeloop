@@ -1034,6 +1034,10 @@ export const site: SiteContent = {
               "transparent": false
             }
           ],
+          "video": {
+            "provider": "youtube",
+            "youtubeUrl": "https://youtube.com/shorts/S06eYxqYHMA"
+          },
           "description": "A fully 3D brand post for Arks. A sleek black-and-red cargo aircraft, emblazoned with the ARKS mark, banks low through a bright, cloud-filled sky before its rear ramp drops open and a stack of shipping containers rolls out into the air. Rendered entirely in 3D with dramatic low-angle, motion-blurred shots, it casts Arks as a bold logistics and air-freight player — built to make cargo and shipping feel cinematic, fast and larger-than-life."
         }
       ]
