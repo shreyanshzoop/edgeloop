@@ -259,8 +259,30 @@ export const site: SiteContent = {
           "name": "All You Can Street",
           "category": "anamorphics",
           "order": 6,
-          "layout": "single",
-          "images": [],
+          "layout": "stack",
+          "images": [
+            {
+              "src": "/media/anamorphics/all-you-can-street/0.png",
+              "alt": "All You Can Street — Anamorphics (1)",
+              "width": 1280,
+              "height": 720,
+              "transparent": true
+            },
+            {
+              "src": "/media/anamorphics/all-you-can-street/1.png",
+              "alt": "All You Can Street — Anamorphics (2)",
+              "width": 1280,
+              "height": 720,
+              "transparent": true
+            },
+            {
+              "src": "/media/anamorphics/all-you-can-street/2.png",
+              "alt": "All You Can Street — Anamorphics (3)",
+              "width": 1280,
+              "height": 720,
+              "transparent": true
+            }
+          ],
           "video": {
             "provider": "youtube",
             "youtubeUrl": "https://youtu.be/J37BD1LWV9s"
@@ -287,8 +309,30 @@ export const site: SiteContent = {
           "name": "Motorola Razor",
           "category": "anamorphics",
           "order": 8,
-          "layout": "single",
-          "images": [],
+          "layout": "stack",
+          "images": [
+            {
+              "src": "/media/anamorphics/motorola-razr-anamorphic-launch/0.png",
+              "alt": "Motorola Razor — Anamorphics (1)",
+              "width": 1280,
+              "height": 269,
+              "transparent": true
+            },
+            {
+              "src": "/media/anamorphics/motorola-razr-anamorphic-launch/1.png",
+              "alt": "Motorola Razor — Anamorphics (2)",
+              "width": 1280,
+              "height": 269,
+              "transparent": true
+            },
+            {
+              "src": "/media/anamorphics/motorola-razr-anamorphic-launch/2.png",
+              "alt": "Motorola Razor — Anamorphics (3)",
+              "width": 1280,
+              "height": 269,
+              "transparent": true
+            }
+          ],
           "video": {
             "provider": "youtube",
             "youtubeUrl": "https://youtu.be/6PLwDzdVQC8"
@@ -301,8 +345,30 @@ export const site: SiteContent = {
           "name": "Tata Steel Dureco",
           "category": "anamorphics",
           "order": 9,
-          "layout": "single",
-          "images": [],
+          "layout": "stack",
+          "images": [
+            {
+              "src": "/media/anamorphics/tata-steel-dureco/0.png",
+              "alt": "Tata Steel Dureco — Anamorphics (1)",
+              "width": 1280,
+              "height": 249,
+              "transparent": true
+            },
+            {
+              "src": "/media/anamorphics/tata-steel-dureco/1.png",
+              "alt": "Tata Steel Dureco — Anamorphics (2)",
+              "width": 1280,
+              "height": 249,
+              "transparent": true
+            },
+            {
+              "src": "/media/anamorphics/tata-steel-dureco/2.png",
+              "alt": "Tata Steel Dureco — Anamorphics (3)",
+              "width": 1280,
+              "height": 249,
+              "transparent": true
+            }
+          ],
           "video": {
             "provider": "youtube",
             "youtubeUrl": "https://youtu.be/Nttegvgrj3c"
@@ -315,8 +381,30 @@ export const site: SiteContent = {
           "name": "AYC OffTheGrid",
           "category": "anamorphics",
           "order": 10,
-          "layout": "single",
-          "images": [],
+          "layout": "stack",
+          "images": [
+            {
+              "src": "/media/anamorphics/ayc-offthegrid/0.png",
+              "alt": "AYC OffTheGrid — Anamorphics (1)",
+              "width": 1600,
+              "height": 428,
+              "transparent": true
+            },
+            {
+              "src": "/media/anamorphics/ayc-offthegrid/1.png",
+              "alt": "AYC OffTheGrid — Anamorphics (2)",
+              "width": 1600,
+              "height": 428,
+              "transparent": true
+            },
+            {
+              "src": "/media/anamorphics/ayc-offthegrid/2.png",
+              "alt": "AYC OffTheGrid — Anamorphics (3)",
+              "width": 1600,
+              "height": 428,
+              "transparent": true
+            }
+          ],
           "video": {
             "provider": "youtube",
             "youtubeUrl": "https://youtu.be/U1ewmEYsNz0"

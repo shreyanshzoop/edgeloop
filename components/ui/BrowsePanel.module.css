@@ -309,12 +309,18 @@
    spread evenly down the box with generous breathing room, centered as a group */
 .previewGrid[data-project='nsm-launch-event'],
 .previewGrid[data-project='hdfc-annual-sparsh'],
-.previewGrid[data-project='tata-accelerating-india'] {
+.previewGrid[data-project='tata-accelerating-india'],
+.previewGrid[data-project='tata-steel-dureco'],
+.previewGrid[data-project='motorola-razr-anamorphic-launch'],
+.previewGrid[data-project='ayc-offthegrid'] {
   gap: 5.5vh;
 }
 .previewGrid[data-project='nsm-launch-event'] .previewImg,
 .previewGrid[data-project='hdfc-annual-sparsh'] .previewImg,
-.previewGrid[data-project='tata-accelerating-india'] .previewImg {
+.previewGrid[data-project='tata-accelerating-india'] .previewImg,
+.previewGrid[data-project='tata-steel-dureco'] .previewImg,
+.previewGrid[data-project='motorola-razr-anamorphic-launch'] .previewImg,
+.previewGrid[data-project='ayc-offthegrid'] .previewImg {
   width: calc(33vw + 10px);
   max-height: none;
 }
