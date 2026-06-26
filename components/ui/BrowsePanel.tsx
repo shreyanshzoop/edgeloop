@@ -10,7 +10,7 @@
  * and the generated content; it is the semantic, crawlable layer behind the canvas.
  */
 
-import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import ArtistBelt from './ArtistBelt'
 import { site } from '@/content/site'
@@ -101,16 +101,42 @@ function ProjectDetail({ project, onBack }: { project: Project; onBack: () => vo
     return () => io.disconnect()
   }, [project.slug])
 
+  // Lightbox: click a reel item to zoom it; arrows step through the media
+  // (wrapping around at the ends). Esc / backdrop closes; ← → keys navigate.
+  const media = project.media ?? []
+  const [lbIndex, setLbIndex] = useState<number | null>(null)
+  const lbClose = useCallback(() => setLbIndex(null), [])
+  const lbStep = useCallback(
+    (delta: number) =>
+      setLbIndex((i) => (i === null ? i : (i + delta + media.length) % media.length)),
+    [media.length],
+  )
+  useEffect(() => {
+    if (lbIndex === null) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') lbClose()
+      else if (e.key === 'ArrowLeft') lbStep(-1)
+      else if (e.key === 'ArrowRight') lbStep(1)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [lbIndex, lbClose, lbStep])
+  // reset when switching projects
+  useEffect(() => setLbIndex(null), [project.slug])
+
+  const lbItem = lbIndex !== null ? media[lbIndex] : null
+
   return (
     <article className={styles.detail} data-category={project.category}>
       <button className={styles.back} onClick={onBack}>
         ← back
       </button>
       <h2 className={styles.detailName}>{project.name}</h2>
-      {/* media reel: looping clips and/or stills carried by the project */}
-      {project.media && project.media.length > 0 && (
+      {/* media reel: looping clips and/or stills carried by the project.
+          Click a tile to open it in the zoom lightbox. */}
+      {media.length > 0 && (
         <div className={styles.detailMedia} ref={mediaWrap}>
-          {project.media.map((m) =>
+          {media.map((m, i) =>
             m.kind === 'video' ? (
               <video
                 key={m.src}
@@ -122,6 +148,7 @@ function ProjectDetail({ project, onBack }: { project: Project; onBack: () => vo
                 playsInline
                 preload="metadata"
                 aria-label={m.alt}
+                onClick={() => setLbIndex(i)}
               />
             ) : (
               <Image
@@ -132,6 +159,7 @@ function ProjectDetail({ project, onBack }: { project: Project; onBack: () => vo
                 height={m.height}
                 className={styles.previewImg}
                 sizes="90vw"
+                onClick={() => setLbIndex(i)}
               />
             ),
           )}
@@ -166,6 +194,62 @@ function ProjectDetail({ project, onBack }: { project: Project; onBack: () => vo
       )}
       {project.stats && <p className={styles.stats}>{project.stats}</p>}
       {project.description && <p className={styles.desc}>{project.description}</p>}
+
+      {lbItem && (
+        <div className={styles.lightbox} onClick={lbClose} role="dialog" aria-modal="true">
+          <button className={styles.lbClose} onClick={lbClose} aria-label="close">
+            ✕
+          </button>
+          {media.length > 1 && (
+            <button
+              className={`${styles.lbArrow} ${styles.lbPrev}`}
+              onClick={(e) => {
+                e.stopPropagation()
+                lbStep(-1)
+              }}
+              aria-label="previous"
+            >
+              ‹
+            </button>
+          )}
+          <div className={styles.lbStage} onClick={(e) => e.stopPropagation()}>
+            {lbItem.kind === 'video' ? (
+              <video
+                key={lbItem.src}
+                className={styles.lbMedia}
+                src={lbItem.src}
+                poster={lbItem.poster}
+                controls
+                autoPlay
+                loop
+                playsInline
+              />
+            ) : (
+              <Image
+                key={lbItem.src}
+                src={lbItem.src}
+                alt={lbItem.alt}
+                width={lbItem.width}
+                height={lbItem.height}
+                className={styles.lbMedia}
+                sizes="90vw"
+              />
+            )}
+          </div>
+          {media.length > 1 && (
+            <button
+              className={`${styles.lbArrow} ${styles.lbNext}`}
+              onClick={(e) => {
+                e.stopPropagation()
+                lbStep(1)
+              }}
+              aria-label="next"
+            >
+              ›
+            </button>
+          )}
+        </div>
+      )}
     </article>
   )
 }
