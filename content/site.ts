@@ -1018,6 +1018,23 @@ export const site: SiteContent = {
             "youtubeUrl": "https://youtube.com/shorts/l6ux9ZcbG50"
           },
           "description": "A 3D supermarket flythrough that glides first-person down a stocked grocery aisle — shelves packed with colourful cereal, chips and packaged goods sliding past a shopping cart — before pushing in on a hero cereal box: 'Fresh Off The Rack', stamped with a bold NEW badge and All You Can branding. Built entirely in 3D, it stages a product drop like a supermarket discovery, turning an everyday retail-shelf moment into a slick, scroll-stopping reveal."
+        },
+        {
+          "slug": "arks",
+          "name": "Arks",
+          "category": "brands",
+          "order": 11,
+          "layout": "single",
+          "images": [
+            {
+              "src": "/media/brands/arks/0.jpg",
+              "alt": "Arks — Brands",
+              "width": 1080,
+              "height": 1920,
+              "transparent": false
+            }
+          ],
+          "description": "A fully 3D brand post for Arks. A sleek black-and-red cargo aircraft, emblazoned with the ARKS mark, banks low through a bright, cloud-filled sky before its rear ramp drops open and a stack of shipping containers rolls out into the air. Rendered entirely in 3D with dramatic low-angle, motion-blurred shots, it casts Arks as a bold logistics and air-freight player — built to make cargo and shipping feel cinematic, fast and larger-than-life."
         }
       ]
     },
