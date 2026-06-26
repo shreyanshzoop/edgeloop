@@ -295,8 +295,37 @@ export const site: SiteContent = {
           "name": "Yes Bank NCR1",
           "category": "anamorphics",
           "order": 7,
-          "layout": "single",
-          "images": [],
+          "layout": "grid2x2",
+          "images": [
+            {
+              "src": "/media/anamorphics/yes-bank-ncr1/0.png",
+              "alt": "Yes Bank NCR1 — Anamorphics (1)",
+              "width": 1280,
+              "height": 720,
+              "transparent": true
+            },
+            {
+              "src": "/media/anamorphics/yes-bank-ncr1/1.png",
+              "alt": "Yes Bank NCR1 — Anamorphics (2)",
+              "width": 1280,
+              "height": 720,
+              "transparent": true
+            },
+            {
+              "src": "/media/anamorphics/yes-bank-ncr1/2.png",
+              "alt": "Yes Bank NCR1 — Anamorphics (3)",
+              "width": 1280,
+              "height": 720,
+              "transparent": true
+            },
+            {
+              "src": "/media/anamorphics/yes-bank-ncr1/3.png",
+              "alt": "Yes Bank NCR1 — Anamorphics (4)",
+              "width": 1280,
+              "height": 720,
+              "transparent": true
+            }
+          ],
           "video": {
             "provider": "youtube",
             "youtubeUrl": "https://youtu.be/i_b1WJ1LXlo"
