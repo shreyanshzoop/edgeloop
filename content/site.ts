@@ -1039,6 +1039,28 @@ export const site: SiteContent = {
             "youtubeUrl": "https://youtube.com/shorts/S06eYxqYHMA"
           },
           "description": "A fully 3D brand post for Arks. A sleek black-and-red cargo aircraft, emblazoned with the ARKS mark, banks low through a bright, cloud-filled sky before its rear ramp drops open and a stack of shipping containers rolls out into the air. Rendered entirely in 3D with dramatic low-angle, motion-blurred shots, it casts Arks as a bold logistics and air-freight player — built to make cargo and shipping feel cinematic, fast and larger-than-life."
+        },
+        {
+          "slug": "hindalco-industries",
+          "name": "Hindalco Industries",
+          "category": "brands",
+          "order": 12,
+          "layout": "single",
+          "images": [
+            {
+              "src": "/media/brands/hindalco-industries/0.jpg",
+              "alt": "Hindalco Industries — Brands",
+              "width": 1280,
+              "height": 720,
+              "transparent": false
+            }
+          ],
+          "video": {
+            "provider": "self",
+            "src": "/media/brands/hindalco-industries/film.mp4",
+            "poster": "/media/brands/hindalco-industries/0.jpg"
+          },
+          "description": "Most people see a factory. Our 3D artists see shapes, movement, textures, light, engineering, and a story waiting to be told. This film was created for the launch of Hindalco's new Chakan facility, which will manufacture aluminium components for bicycles and e-bikes. From the first sketch to the final render, every visual was crafted by our in-house team, who spent countless hours finding ways to make an industrial story feel dynamic, modern, and memorable."
         }
       ]
     },

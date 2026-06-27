@@ -79,6 +79,8 @@ function ProjectDetail({ project, onBack }: { project: Project; onBack: () => vo
     project.video?.provider === 'youtube' && project.video.youtubeUrl
       ? youtubeId(project.video.youtubeUrl)
       : null
+  const selfVideo =
+    project.video?.provider === 'self' && project.video.src ? project.video.src : null
 
   // Media grid (videos/images) — used when a project carries its own media reel
   // (e.g. the artist visual loops). Only clips scrolled into view actually play.
@@ -190,6 +192,11 @@ function ProjectDetail({ project, onBack }: { project: Project; onBack: () => vo
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
+        </div>
+      )}
+      {selfVideo && (
+        <div className={styles.video}>
+          <video src={selfVideo} poster={project.video?.poster} controls playsInline preload="metadata" />
         </div>
       )}
       {project.stats && <p className={styles.stats}>{project.stats}</p>}
