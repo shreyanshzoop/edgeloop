@@ -971,6 +971,81 @@ export const site: SiteContent = {
             }
           ],
           "description": "A reel of 3D motion and visual work created for Jayzze — surreal, high-impact pieces spanning eyes, type and otherworldly forms. Each loop leans into bold concept and clean render craft, built to give the artist a striking, scroll-stopping visual signature."
+        },
+        {
+          "slug": "dev-raiyani",
+          "name": "Dev Raiyani",
+          "category": "artists",
+          "order": 7,
+          "layout": "single",
+          "images": [],
+          "media": [
+            {
+              "kind": "video",
+              "src": "/media/artists/dev-raiyani/comp.mp4",
+              "alt": "Dev Raiyani — Comp",
+              "width": 270,
+              "height": 480,
+              "poster": "/media/artists/dev-raiyani/comp.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/dev-raiyani/dev-sigil.mp4",
+              "alt": "Dev Raiyani — Dev Sigil",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/dev-raiyani/dev-sigil.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/dev-raiyani/export-3.mp4",
+              "alt": "Dev Raiyani — Export 3",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/dev-raiyani/export-3.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/dev-raiyani/clip-1.mp4",
+              "alt": "Dev Raiyani — Clip 1",
+              "width": 850,
+              "height": 480,
+              "poster": "/media/artists/dev-raiyani/clip-1.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/dev-raiyani/clip-2.mp4",
+              "alt": "Dev Raiyani — Clip 2",
+              "width": 850,
+              "height": 480,
+              "poster": "/media/artists/dev-raiyani/clip-2.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/dev-raiyani/clip-3.mp4",
+              "alt": "Dev Raiyani — Clip 3",
+              "width": 850,
+              "height": 480,
+              "poster": "/media/artists/dev-raiyani/clip-3.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/dev-raiyani/wolf.mp4",
+              "alt": "Dev Raiyani — Wolf Pt. 2",
+              "width": 856,
+              "height": 480,
+              "poster": "/media/artists/dev-raiyani/wolf.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/dev-raiyani/yin-yang.mp4",
+              "alt": "Dev Raiyani — Yin Yang",
+              "width": 480,
+              "height": 480,
+              "poster": "/media/artists/dev-raiyani/yin-yang.jpg"
+            }
+          ],
+          "description": "A reel of 3D motion and visual work created for Dev Raiyani — sigils, totem creatures and symbol-driven loops (Dev Sigil, Wolf, Yin Yang and more) rendered with bold, high-contrast craft. Each piece is built to give the artist a striking, instantly recognisable visual identity for stage and screen."
         }
       ]
     },
