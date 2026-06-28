@@ -675,6 +675,40 @@ export const site: SiteContent = {
           "order": 1,
           "layout": "single",
           "images": [],
+          "media": [
+            {
+              "kind": "video",
+              "src": "/media/artists/stuvi/1.mp4",
+              "alt": "Stuvi — 1",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/stuvi/1.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/stuvi/2.mp4",
+              "alt": "Stuvi — 2",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/stuvi/2.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/stuvi/3.mp4",
+              "alt": "Stuvi — 3",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/stuvi/3.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/stuvi/4.mp4",
+              "alt": "Stuvi — 4",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/stuvi/4.jpg"
+            }
+          ],
           "description": "CGI motion and visual content produced for Stuvi."
         },
         {
