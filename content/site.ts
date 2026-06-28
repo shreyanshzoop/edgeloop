@@ -835,6 +835,65 @@ export const site: SiteContent = {
             }
           ],
           "description": "A cinematic 3D film under the Blood Sport banner — a noir-tinged crime story told across moody set-pieces: a car tearing through the night, a tense detective beat, a charged moment at the table. Rendered with dramatic lighting and a filmic grade, every shot is built to feel like a frame lifted straight out of a thriller."
+        },
+        {
+          "slug": "metal",
+          "name": "Metal",
+          "category": "artists",
+          "order": 5,
+          "layout": "single",
+          "images": [],
+          "media": [
+            {
+              "kind": "video",
+              "src": "/media/artists/metal/cross.mp4",
+              "alt": "Metal — Cross",
+              "width": 480,
+              "height": 480,
+              "poster": "/media/artists/metal/cross.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/metal/exo.mp4",
+              "alt": "Metal — Exo",
+              "width": 480,
+              "height": 480,
+              "poster": "/media/artists/metal/exo.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/metal/sarthak.mp4",
+              "alt": "Metal — Sarthak",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/metal/sarthak.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/metal/r2c.mp4",
+              "alt": "Metal — R2C",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/metal/r2c.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/metal/goolag.mp4",
+              "alt": "Metal — Goolag",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/metal/goolag.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/metal/spinnin-o.mp4",
+              "alt": "Metal — Spinnin O",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/metal/spinnin-o.jpg"
+            }
+          ],
+          "description": "A reel of 3D logo and identity animations made under the Metal banner — bold, high-contrast brand and artist marks (Cross, Exo, R2C, Goolag and more) forged in metal, chrome and light. Each loop spins, morphs and catches the light to give a logo real weight and presence on screen."
         }
       ]
     },
