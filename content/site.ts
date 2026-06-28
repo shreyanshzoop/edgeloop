@@ -776,6 +776,65 @@ export const site: SiteContent = {
             }
           ],
           "description": "A run of music-video and motion work for The Sincerities — covers and originals (Look At You, Robbers, She Looks So Perfect, Somebody to Love, Teenage Dirtbag, Yellow) plus logo and vinyl idents. Cinematic, mood-driven visuals built for release."
+        },
+        {
+          "slug": "blood-sport",
+          "name": "Blood Sport",
+          "category": "artists",
+          "order": 4,
+          "layout": "single",
+          "images": [],
+          "media": [
+            {
+              "kind": "video",
+              "src": "/media/artists/blood-sport/car-first-shot.mp4",
+              "alt": "Blood Sport — Car — First Shot",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/blood-sport/car-first-shot.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/blood-sport/car-chase.mp4",
+              "alt": "Blood Sport — Car Chase",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/blood-sport/car-chase.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/blood-sport/detective.mp4",
+              "alt": "Blood Sport — Detective Scene",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/blood-sport/detective.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/blood-sport/table-scene.mp4",
+              "alt": "Blood Sport — Table Scene",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/blood-sport/table-scene.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/blood-sport/shot-2.mp4",
+              "alt": "Blood Sport — Shot 2",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/blood-sport/shot-2.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/blood-sport/shot-3.mp4",
+              "alt": "Blood Sport — Shot 3",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/blood-sport/shot-3.jpg"
+            }
+          ],
+          "description": "A cinematic 3D film under the Blood Sport banner — a noir-tinged crime story told across moody set-pieces: a car tearing through the night, a tense detective beat, a charged moment at the table. Rendered with dramatic lighting and a filmic grade, every shot is built to feel like a frame lifted straight out of a thriller."
         }
       ]
     },
