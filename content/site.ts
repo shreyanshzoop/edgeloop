@@ -928,6 +928,49 @@ export const site: SiteContent = {
             }
           ],
           "description": "A reel of 3D logo and identity animations made under the Metal banner — bold, high-contrast brand and artist marks (Cross, Exo, R2C, Goolag and more) forged in metal, chrome and light. Each loop spins, morphs and catches the light to give a logo real weight and presence on screen."
+        },
+        {
+          "slug": "jayzze",
+          "name": "Jayzze",
+          "category": "artists",
+          "order": 6,
+          "layout": "single",
+          "images": [],
+          "media": [
+            {
+              "kind": "video",
+              "src": "/media/artists/jayzze/ps.mp4",
+              "alt": "Jayzze — PS",
+              "width": 834,
+              "height": 480,
+              "poster": "/media/artists/jayzze/ps.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/jayzze/voice-of-truth.mp4",
+              "alt": "Jayzze — The Voice of Truth",
+              "width": 480,
+              "height": 480,
+              "poster": "/media/artists/jayzze/voice-of-truth.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/jayzze/eye.mp4",
+              "alt": "Jayzze — Eye",
+              "width": 480,
+              "height": 480,
+              "poster": "/media/artists/jayzze/eye.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/jayzze/it.mp4",
+              "alt": "Jayzze — It",
+              "width": 480,
+              "height": 480,
+              "poster": "/media/artists/jayzze/it.jpg"
+            }
+          ],
+          "description": "A reel of 3D motion and visual work created for Jayzze — surreal, high-impact pieces spanning eyes, type and otherworldly forms. Each loop leans into bold concept and clean render craft, built to give the artist a striking, scroll-stopping visual signature."
         }
       ]
     },
