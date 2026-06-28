@@ -45,10 +45,9 @@ function Preview({ project }: { project: Project }) {
         className={styles.loaderWrap}
         data-category={project.category}
         role="status"
-        aria-label={`${project.name} — media coming soon`}
+        aria-label={`${project.name} — coming soon`}
       >
-        <span className={styles.loader} aria-hidden />
-        <span className={styles.loaderText}>loading...</span>
+        <span className={styles.loaderText}>coming soon</span>
       </div>
     )
   }

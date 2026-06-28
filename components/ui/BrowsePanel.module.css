@@ -232,8 +232,9 @@
   animation: loaderSpin 1.6s linear infinite;
 }
 .loaderText {
-  font-size: 0.8rem;
-  letter-spacing: 0.06em;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
 }
 @keyframes loaderSpin {
   to {
