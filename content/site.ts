@@ -1056,9 +1056,8 @@ export const site: SiteContent = {
             }
           ],
           "video": {
-            "provider": "self",
-            "src": "/media/brands/hindalco-industries/film.mp4",
-            "poster": "/media/brands/hindalco-industries/0.jpg"
+            "provider": "youtube",
+            "youtubeUrl": "https://youtu.be/LvyQ28d7dPw"
           },
           "description": "Most people see a factory. Our 3D artists see shapes, movement, textures, light, engineering, and a story waiting to be told. This film was created for the launch of Hindalco's new Chakan facility, which will manufacture aluminium components for bicycles and e-bikes. From the first sketch to the final render, every visual was crafted by our in-house team, who spent countless hours finding ways to make an industrial story feel dynamic, modern, and memorable."
         }
