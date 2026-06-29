@@ -707,6 +707,30 @@ export const site: SiteContent = {
               "width": 854,
               "height": 480,
               "poster": "/media/artists/stuvi/4.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/stuvi/tits.mp4",
+              "alt": "Stuvi — TITS",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/stuvi/tits.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/stuvi/comp-1.mp4",
+              "alt": "Stuvi — Comp 1",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/stuvi/comp-1.jpg"
+            },
+            {
+              "kind": "video",
+              "src": "/media/artists/stuvi/cd.mp4",
+              "alt": "Stuvi — Cd",
+              "width": 854,
+              "height": 480,
+              "poster": "/media/artists/stuvi/cd.jpg"
             }
           ],
           "description": "CGI motion and visual content produced for Stuvi."
